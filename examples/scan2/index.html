@@ -1,0 +1,1046 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Ability to get more meaninful text out of common OCR outputs.">
+      
+      
+      
+        <meta name="author" content="Nicolas Uthurriague">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+    
+    
+      
+        <title>Complex page Layout - OCR Layout Helper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#complex-page-layout" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="OCR Layout Helper" class="md-header-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OCR Layout Helper
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Complex page Layout
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OCR Layout Helper" class="md-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OCR Layout Helper
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../azure/" title="Azure OCR" class="md-nav__link">
+      Azure OCR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../google/" title="Google OCR" class="md-nav__link">
+      Google OCR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sorting/" title="Sorting Strategy" class="md-nav__link">
+      Sorting Strategy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Examples
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../infography1/" title="Simple Infographic" class="md-nav__link">
+      Simple Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../infography2/" title="Complex Infographic" class="md-nav__link">
+      Complex Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scan1/" title="Simple page Layout" class="md-nav__link">
+      Simple page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scan6/" title="Common page Layout" class="md-nav__link">
+      Common page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Complex page Layout
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Complex page Layout" class="md-nav__link md-nav__link--active">
+      Complex page Layout
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complex-page-layout" class="md-nav__link">
+    Complex page Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-raw-text-ouput" class="md-nav__link">
+    Azure Raw Text ouput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing" class="md-nav__link">
+    Azure BBoxing...
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure BBoxing...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-text-output" class="md-nav__link">
+    Azure text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+    <nav class="md-nav" aria-label="Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-raw-text-output" class="md-nav__link">
+    Google Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing" class="md-nav__link">
+    Google BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="Google BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing-text-output" class="md-nav__link">
+    Google BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../known-limitations/" title="Known Limitations" class="md-nav__link">
+      Known Limitations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      About
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="About" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complex-page-layout" class="md-nav__link">
+    Complex page Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-raw-text-ouput" class="md-nav__link">
+    Azure Raw Text ouput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing" class="md-nav__link">
+    Azure BBoxing...
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure BBoxing...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-text-output" class="md-nav__link">
+    Azure text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+    <nav class="md-nav" aria-label="Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-raw-text-output" class="md-nav__link">
+    Google Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing" class="md-nav__link">
+    Google BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="Google BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing-text-output" class="md-nav__link">
+    Google BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/puthurr/ocrlayout/blob/master/docs/examples/scan2.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Complex page Layout</h1>
+                
+                <h2 id="complex-page-layout">Complex page Layout<a class="headerlink" href="#complex-page-layout" title="Permanent link">&para;</a></h2>
+<p><img alt="Screenshot" src="../img/scan2.png" /></p>
+<p>The above image is more complex layout similar to newspapers. </p>
+<p>You will see that some OCR engines will clearly expose their line processing while other would do a better raw output. </p>
+<p>Let's dive in each OCR Engine showing you how BBOXHelper helps increasing the coherence of the textual output. </p>
+<h2 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw Azure OCR output where we drew each line of text bounding boxes. 
+<img alt="Screenshot" src="../img/scan2.azure.png" /></p>
+<h3 id="azure-raw-text-ouput">Azure Raw Text ouput<a class="headerlink" href="#azure-raw-text-ouput" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>ARTICLE
+to foster dialogue over disputes in the South China
+Sea. China and Taiwan, as well as ASEAN members
+Brunei, Malaysia, the Philippines and Vietnam,
+have conflicting territorial claims to the sea.
+In May 2014, China sent rigs to areas Vietnam
+claims as its territory, a move that set off protests in
+DIPLOMACY &amp; POLITICS
+the latter country. ASEAN foreign ministers re-
+sponded with a united voice, calling for all parties
+involved to follow intemational law, including the
+UN Convention on the Law of the Sea. Malaysia&#39;s
+foreign minister has said stability in the maritime
+region would be a top priority in 2015.
+Malaysia&#39;s prime minister visited China twice
+in 2014, with the second trip made during the 40-
+year anniversary of bilateral ties between the two
+countries. Malaysia is working to continue improving
+bilateral relations with neighbours Indonesia and
+Malaysia&#39;s prime minister visited China twice in 2014 to improve bilateral relations
+Singapore, as well. Despite disagreements over in-
+ZFIGURES
+reduce state dependence on petroleum-related in-
+cidents in neighbouring waters and migrant worker
+issues, maintaining good relations is important for
+come. The tax will replace other consumption taxes
+both Indonesia and Malaysia.
+ARTICLE
+2014 SUBSIDY
+such as the sales and service tax, but will also cover
+The same is true for relations with Singapore.
+REDUCTIONS
+a wider range of goods and services.
+Plans to construct a bridge on the Johor Strait to re-
+LED TO A
+BUDGET FOR THE FUTURE: The prices of palm oil
+place the Johor Causeway may be in the works. The
+strait marks the coastal divide between Malaysia
+9.5-percent
+and rubber, Malaysia&#39;s two biggest exports,
+INCREASE IN
+have also fallen. In response, the government
+PETROL PRICES
+has created a fund to assist rubber producers Regional priorities for Malaysia in 2015
+if the price continues to fall. In December
+2014, the country&#39;s northern states were
+ravaged by the worst flooding seen since 1971,
+include advancing progress on the
+THE
+with more than 230,000 people evacuated
+from their homes. Palm oil production slumped
+planned ASEAN common market and
+BUMIPUTERA
+to a 10-year low as a result of the damage.
+ECONOMIC
+Malaysia&#39;s 2015 budget was unveiled in
+ensuring maritime security and co-
+EMPOWER-
+October 2014 and amended in January 2015
+to accommodate for low oil prices and the
+operation in the South China Sea.
+MENT
+devastation from monsoon floods.
+The original version of the budget included
+and Singapore. The primary reasons cited for con-
+PROGRAMME
+measures to improve opportunities for jobs and
+struction of the bridge are to ease congestion and
+IS VALUED AT
+housing. The updated version of the budget intro-
+further improve bilateral relations.
+$10 billion
+duced more allocations for small and medium-sized
+enterprises to help further reduce dependence on
+GLOBAL TIES: Malaysia&#39;s relations with the US are
+the oil industry and flood relief for affected businesses
+also improving. Barack Obama visited Malaysia in
+and rehabilitation projects.
+MALAYSIA
+A more controversial component of the budget
+April 2014, the first visit made by a US president
+is the nearly $10-billion Bumiputera Economic Em-
+since Lyndon B. Johnson&#39;s in 1966.
+PLACED
+On the docket were talks to increase co-operation
+powerment programme, which will benefit ethnic
+on economic issues, security, education and tech-
+18th
+Malays and other indigenous people, around 68
+percent of the country&#39;s population. Critics have
+nology, as well as the feasibility of visa-free access
+for work and travel for up to 90 days for Malaysians
+IN THE 2015
+raised concerns over the initiative&#39;s cost and its po-
+visiting the US. Malaysia&#39;s home minister has said
+DOING
+tential exacerbation of a &quot;brain drain&quot; among the
+Chinese and Indian-Malaysian population, who
+that the efforts to meet US visa-free requirements
+may perceive themselves as being at a disadvantage.
+could succeed by the end of 2015.
+BUSINESS
+RANKINGS
+DIPLOMATIC PUSH: Malaysia has already indicated
+ECONOMIC CHANGE: Malaysia aims to become a
+high-income country by 2020, and the World Bank
+it will be a strong diplomatic player in 2015. The
+prime minister actively promoted both the country
+says it is on track to do so. &quot;Malaysia is poised to
+reach the World Bank&#39;s high-income status before
+and the ASEAN community at the World Economic
+Forum meeting in January 2015 during talks with
+2020, as the basic drivers of growth at the macro
+level remain firm,&quot; World Bank senior country
+foreign leaders and representatives of UK defence
+economist for Malaysia, Frederico Gil Sander, said.
+company BAE Systems, engineering multinational
+In 2014, the country placed among the top five
+Lloyd&#39;s Register and Shell, among others.
+economies in the Asia-Pacific region in seven areas
+For the first time in 15 years, Malaysia was
+voted back into the United Nations Security Council
+measured by the World Bank&#39;s Doing Business in-
+in October 2014 as a representative of the Asia-
+dicators. Its overall ranking was 18th worldwide.
+Pacific region. While oil prices remain uncertain in
+REGIONAL RELATIONS: As the chair of ASEAN in
+2015, the Malaysian government is working to
+ensure the country and the wider ASEAN region
+2015, Malaysia is in the delicate position of having
+will be poised for longer-term economic security.
+THE OIL &amp; GAS YEAR | MALAYSIA 2015
+The Who&#39;s Who of the Global Energy Industry
+</code></pre></div>
+
+
+<p>We can clearly see that the lines of text are processed in a certain order in Azure Computer Vision adding the noise of the continents in between "sentences".</p>
+<h3 id="azure-bboxing">Azure BBoxing...<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
+<p>Boxes are drawn on top of the original image. </p>
+<p>The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. </p>
+<p><img alt="Screenshot" src="../img/scan2.azure.bbox.png" /></p>
+<h4 id="azure-text-output">Azure text output<a class="headerlink" href="#azure-text-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>ARTICLE
+DIPLOMACY &amp; POLITICS ZFIGURES 2014 SUBSIDY ARTICLE REDUCTIONS LED TO A 9.5-percent INCREASE IN PETROL PRICES
+THE BUMIPUTERA ECONOMIC EMPOWER- MENT PROGRAMME IS VALUED AT $10 billion
+MALAYSIA PLACED 18th IN THE 2015 DOING BUSINESS RANKINGS
+Malaysia&#39;s prime minister visited China twice in 2014 to improve bilateral relations
+reduce state dependence on petroleum-related in- come. The tax will replace other consumption taxes such as the sales and service tax, but will also cover a wider range of goods and services.
+Malaysia&#39;s 2015 budget was unveiled in October 2014 and amended in January 2015 to accommodate for low oil prices and the devastation from monsoon floods.
+The original version of the budget included measures to improve opportunities for jobs and housing. The updated version of the budget intro- duced more allocations for small and medium-sized enterprises to help further reduce dependence on the oil industry and flood relief for affected businesses and rehabilitation projects. A more controversial component of the budget is the nearly $10-billion Bumiputera Economic Em- powerment programme, which will benefit ethnic Malays and other indigenous people, around 68 percent of the country&#39;s population. Critics have raised concerns over the initiative&#39;s cost and its po- tential exacerbation of a &quot;brain drain&quot; among the Chinese and Indian-Malaysian population, who may perceive themselves as being at a disadvantage.
+ECONOMIC CHANGE: Malaysia aims to become a high-income country by 2020, and the World Bank says it is on track to do so. &quot;Malaysia is poised to reach the World Bank&#39;s high-income status before 2020, as the basic drivers of growth at the macro level remain firm,&quot; World Bank senior country economist for Malaysia, Frederico Gil Sander, said. In 2014, the country placed among the top five economies in the Asia-Pacific region in seven areas measured by the World Bank&#39;s Doing Business in- dicators. Its overall ranking was 18th worldwide.
+REGIONAL RELATIONS: As the chair of ASEAN in 2015, Malaysia is in the delicate position of having
+BUDGET FOR THE FUTURE: The prices of palm oil and rubber, Malaysia&#39;s two biggest exports, have also fallen. In response, the government has created a fund to assist rubber producers Regional priorities for Malaysia in 2015 if the price continues to fall. In December 2014, the country&#39;s northern states were ravaged by the worst flooding seen since 1971, with more than 230,000 people evacuated from their homes. Palm oil production slumped to a 10-year low as a result of the damage.
+to foster dialogue over disputes in the South China Sea. China and Taiwan, as well as ASEAN members Brunei, Malaysia, the Philippines and Vietnam, have conflicting territorial claims to the sea. In May 2014, China sent rigs to areas Vietnam claims as its territory, a move that set off protests in the latter country. ASEAN foreign ministers re- sponded with a united voice, calling for all parties involved to follow intemational law, including the UN Convention on the Law of the Sea. Malaysia&#39;s foreign minister has said stability in the maritime region would be a top priority in 2015. Malaysia&#39;s prime minister visited China twice in 2014, with the second trip made during the 40- year anniversary of bilateral ties between the two countries. Malaysia is working to continue improving bilateral relations with neighbours Indonesia and Singapore, as well. Despite disagreements over in- cidents in neighbouring waters and migrant worker issues, maintaining good relations is important for both Indonesia and Malaysia. The same is true for relations with Singapore. Plans to construct a bridge on the Johor Strait to re- place the Johor Causeway may be in the works. The strait marks the coastal divide between Malaysia
+include advancing progress on the planned ASEAN common market and ensuring maritime security and co- operation in the South China Sea.
+and Singapore. The primary reasons cited for con- struction of the bridge are to ease congestion and further improve bilateral relations.
+GLOBAL TIES: Malaysia&#39;s relations with the US are also improving. Barack Obama visited Malaysia in April 2014, the first visit made by a US president since Lyndon B. Johnson&#39;s in 1966. On the docket were talks to increase co-operation on economic issues, security, education and tech- nology, as well as the feasibility of visa-free access for work and travel for up to 90 days for Malaysians visiting the US. Malaysia&#39;s home minister has said that the efforts to meet US visa-free requirements could succeed by the end of 2015.
+DIPLOMATIC PUSH: Malaysia has already indicated it will be a strong diplomatic player in 2015. The prime minister actively promoted both the country and the ASEAN community at the World Economic Forum meeting in January 2015 during talks with foreign leaders and representatives of UK defence company BAE Systems, engineering multinational Lloyd&#39;s Register and Shell, among others. For the first time in 15 years, Malaysia was voted back into the United Nations Security Council in October 2014 as a representative of the Asia- Pacific region. While oil prices remain uncertain in 2015, the Malaysian government is working to ensure the country and the wider ASEAN region will be poised for longer-term economic security.
+THE OIL &amp; GAS YEAR | MALAYSIA 2015
+The Who&#39;s Who of the Global Energy Industry
+</code></pre></div>
+
+
+<h2 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw Google OCR output where we drew each line of text bounding boxes. Yellow colored are the words, red is for paragraphs and blue are for the blocks. See <a href="/google">Google Ocr</a> for more details.</p>
+<p><img alt="Screenshot" src="../img/scan2.google.png" /></p>
+<h3 id="google-raw-text-output">Google Raw Text output<a class="headerlink" href="#google-raw-text-output" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>ARTICLE
+1
+DIPLOMACY &amp; POLITICS E ARTICLE
+to foster dialogue over disputes in the South China
+Sea. China and Taiwan, as well as ASEAN members
+Brunei, Malaysia, the Philippines and Vietnam,
+have conflicting territorial daims to the sea.
+In May 2014, China sent rigs to areas Vietnam
+claims as its territory, a move that set off protests in
+the latter country. ASEAN foreign ministers re
+sponded with a united voice, calling for all parties
+involved to follow intemational law, including the
+UN Convention on the Law of the Sea, Malaysia&#39;s
+foreign minister has said stability in the maritime
+region would be a top priority in 2015.
+Malaysia&#39;s prime minister visited China twice
+in 2014, with the second trip made during the 40-
+year anniversary of bilateral ties between the two
+countries. Malaysia is working to continue improving
+bilateral relations with neighbours Indonesia and
+Malaysia&#39;s prime minister visited China twice in 2014 to improve bilateral relations Singapore, as well. Despite disagreements over in-
+cidents in neighbouring waters and migrant worker
+14 ZFIGURES reduce state dependence on petroleum-related in issues, maintaining good relations is important for
+come. The tax will replace other consumption taxes
+both Indonesia and Malaysia.
+2014 SUBSIDY such as the sales and service tax, but will also cover The same is true for relations with Singapore.
+REDUCTIONS a wider range of goods and services.
+Plans to construct a bridge on the Johor Strait to re
+place the Johor Causeway may be in the works. The
+m LED TO A
+BUDGET FOR THE FUTURE: The prices of palm oil strait marks the coastal divide between Malaysia
+9.5-percent
+and rubber, Malaysia&#39;s two biggest exports,
+have also fallen. In response, the government
+INCREASE IN has created a fund to assist rubber producers Regional priorities for Malaysia in 2015
+PETROL PRICES
+if the price continues to fall. In December
+2014, the country&#39;s northern states were include advancing progress on the
+ravaged by the worst flooding seen since 1971,
+THE
+with more than 230,000 people evacuated planned ASEAN common market and
+from their homes. Palm oil production slumped
+BUMIPUTERA to a 10-year low as a result of the damage.
+ensuring maritime security and co-
+ECONOMIC
+Malaysia&#39;s 2015 budget was unveiled in
+October 2014 and amended in January 2015
+operation in the South China Sea.
+EMPOWER-
+to accommodate for low oil prices and the
+devastation from monsoon floods.
+MENT
+The original version of the budget included and Singapore. The primary reasons cited for con-
+PROGRAMME measures to improve opportunities for jobs and struction of the bridge are to ease congestion and
+housing. The updated version of the budget intro further improve bilateral relations.
+IS VALUED AT
+duced more allocations for small and medium-sized
+$10 billion enterprises to help further reduce dependence on GLOBAL TIES: Malaysia&#39;s relations with the US are
+the oil industry and flood relief for affected businesses also improving, Barack Obama visited Malaysia in
+and rehabilitation projects.
+April 2014, the first visit made by a US president
+MALAYSIA
+A more controversial component of the budget since Lyndon B. Johnson&#39;s in 1966.
+is the nearly $10-billion Bumiputera Economic Em On the docket were talks to increase co-operation
+PLACED
+powerment programme, which will benefit ethnic
+on economic issues, security, education and tech-
+18th
+Malays and other indigenous people, around 68 nology, as well as the feasibility of visa-free access
+percent of the country&#39;s population. Critics have for work and travel for up to 90 days for Malaysians
+IN THE 2015
+raised concerns over the initiative&#39;s cost and its po visiting the US. Malaysia&#39;s home minister has said
+tential exacerbation of a &quot;brain drain&quot; among the that the efforts to meet US visa-free requirements
+DOING
+Chinese and Indian-Malaysian population, who could succeed by the end of 2015.
+BUSINESS may perceive themselves as being at a disadvantage.
+DIPLOMATIC PUSH: Malaysia has already indicated
+RANKINGS
+ECONOMIC CHANGE: Malaysia aims to become a it will be a strong diplomatic player in 2015. The
+high-income country by 2020, and the World Bank prime minister actively promoted both the country
+says it is on track to do so. &quot;Malaysia is poised to and the ASEAN community at the World Economic
+reach the World Bank&#39;s high-income status before Forum meeting in January 2015 during talks with
+2020, as the basic drivers of growth at the macro foreign leaders and representatives of UK defence
+level remain firm.&quot; World Bank senior country company BAE Systems, engineering multinational
+economist for Malaysia, Frederico Gil Sander, said. Lloyd&#39;s Register and Shell, among others.
+In 2014, the country placed among the top five For the first time in 15 years, Malaysia was
+economies in the Asia-Pacific region in seven areas voted back into the United Nations Security Council
+measured by the World Bank&#39;s Doing Business in in October 2014 as a representative of the Asia-
+dicators. Its overall ranking was 18th worldwide. Pacific region. While oil prices remain uncertain in
+2015, the Malaysian government is working to
+REGIONAL RELATIONS: As the chair of ASEAN in ensure the country and the wider ASEAN region
+2015, Malaysia is in the delicate position of having will be poised for longer-term economic security.
+THE OIL &amp; GAS YEAR MALAYSIA 2015
+The Whos Who of the Global Energy Industry
+</code></pre></div>
+
+
+<h3 id="google-bboxing">Google BBoxing<a class="headerlink" href="#google-bboxing" title="Permanent link">&para;</a></h3>
+<p>Boxes are drawn on the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
+<img alt="Screenshot" src="../img/scan2.google.bbox.png" /></p>
+<h4 id="google-bboxing-text-output">Google BBoxing text output<a class="headerlink" href="#google-bboxing-text-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>m  DIPLOMACY &amp; POLITICS E ARTICLE
+14 
+ARTICLE
+1
+to foster dialogue over disputes in the South China Sea. China and Taiwan, as well as ASEAN members Brunei, Malaysia, the Philippines and Vietnam, have conflicting territorial daims to the sea. In May 2014, China sent rigs to areas Vietnam claims as its territory, a move that set off protests in the latter country. ASEAN foreign ministers re sponded with a united voice, calling for all parties involved to follow intemational law, including the UN Convention on the Law of the Sea, Malaysia&#39;s foreign minister has said stability in the maritime region would be a top priority in 2015. Malaysia&#39;s prime minister visited China twice
+Malaysia&#39;s prime minister visited China twice in 2014 to improve bilateral relations 
+in 2014, with the second trip made during the 40year anniversary of bilateral ties between the two countries. Malaysia is working to continue improving bilateral relations with neighbours Indonesia and Singapore, as well. Despite disagreements over incidents in neighbouring waters and migrant worker issues, maintaining good relations is important for both Indonesia and Malaysia. The same is true for relations with Singapore. Plans to construct a bridge on the Johor Strait to re place the Johor Causeway may be in the works. The strait marks the coastal divide between Malaysia
+ZFIGURES  2014 SUBSIDY  REDUCTIONS  LED TO A 9.5-percent INCREASE IN  PETROL PRICES
+reduce state dependence on petroleum-related in  come. The tax will replace other consumption taxes such as the sales and service tax, but will also cover  a wider range of goods and services. BUDGET FOR THE FUTURE: The prices of palm oil  and rubber, Malaysia&#39;s two biggest exports, have also fallen. In response, the government has created a fund to assist rubber producers  if the price continues to fall. In December 2014, the country&#39;s northern states were  ravaged by the worst flooding seen since 1971, with more than 230,000 people evacuated  from their homes. Palm oil production slumped to a 10-year low as a result of the damage.
+THE BUMIPUTERA 
+Regional priorities for Malaysia in 2015 include advancing progress on the planned ASEAN common market and
+EMPOWER MENT
+Malaysia&#39;s 2015 budget was unveiled in October 2014 and amended in January 2015 to accommodate for low oil prices and the devastation from monsoon floods.
+ensuring maritime security and coECONOMIC operation in the South China Sea.
+IS VALUED AT $10 billion 
+and Singapore. The primary reasons cited for conPROGRAMME  struction of the bridge are to ease congestion and further improve bilateral relations.
+MALAYSIA PLACED
+A more controversial component of the budget 
+The original version of the budget included  measures to improve opportunities for jobs and  housing. The updated version of the budget intro  duced more allocations for small and medium-sized enterprises to help further reduce dependence on  the oil industry and flood relief for affected businesses  and rehabilitation projects. is the nearly $10-billion Bumiputera Economic Em  powerment programme, which will benefit ethnic Malays and other indigenous people, around 68  percent of the country&#39;s population. Critics have  raised concerns over the initiative&#39;s cost and its po  tential exacerbation of a &quot;brain drain&quot; among the  Chinese and Indian-Malaysian population, who  may perceive themselves as being at a disadvantage.
+GLOBAL TIES: Malaysia&#39;s relations with the US are also improving, Barack Obama visited Malaysia in April 2014, the first visit made by a US president since Lyndon B. Johnson&#39;s in 1966. On the docket were talks to increase co-operation on economic issues, security, education and tech18th nology, as well as the feasibility of visa-free access for work and travel for up to 90 days for Malaysians visiting the US. Malaysia&#39;s home minister has said that the efforts to meet US visa-free requirements could succeed by the end of 2015.
+IN THE 2015 DOING BUSINESS  RANKINGS
+ECONOMIC CHANGE: Malaysia aims to become a  high-income country by 2020, and the World Bank  says it is on track to do so. &quot;Malaysia is poised to  reach the World Bank&#39;s high-income status before  2020, as the basic drivers of growth at the macro  level remain firm.&quot; World Bank senior country  economist for Malaysia, Frederico Gil Sander, said.  In 2014, the country placed among the top five  economies in the Asia-Pacific region in seven areas  measured by the World Bank&#39;s Doing Business in 
+DIPLOMATIC PUSH: Malaysia has already indicated it will be a strong diplomatic player in 2015. The prime minister actively promoted both the country and the ASEAN community at the World Economic Forum meeting in January 2015 during talks with foreign leaders and representatives of UK defence company BAE Systems, engineering multinational Lloyd&#39;s Register and Shell, among others. For the first time in 15 years, Malaysia was voted back into the United Nations Security Council in October 2014 as a representative of the Asiadicators. Its overall ranking was 18th worldwide.  Pacific region. While oil prices remain uncertain in 2015, the Malaysian government is working to ensure the country and the wider ASEAN region will be poised for longer-term economic security.
+REGIONAL RELATIONS: As the chair of ASEAN in  2015, Malaysia is in the delicate position of having 
+THE OIL &amp; GAS YEAR MALAYSIA 2015
+The Whos Who of the Global Energy Industry
+</code></pre></div>
+
+
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Some noise to tackle in future versions, but overall we increased the comprehension of the image. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../scan6/" title="Common page Layout" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Common page Layout
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../known-limitations/" title="Known Limitations" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Known Limitations
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

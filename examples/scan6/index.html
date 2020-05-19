@@ -1,0 +1,920 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Ability to get more meaninful text out of common OCR outputs.">
+      
+      
+      
+        <meta name="author" content="Nicolas Uthurriague">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+    
+    
+      
+        <title>Common page Layout - OCR Layout Helper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#medium-complexity-page-layout" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="OCR Layout Helper" class="md-header-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OCR Layout Helper
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Common page Layout
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OCR Layout Helper" class="md-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OCR Layout Helper
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../azure/" title="Azure OCR" class="md-nav__link">
+      Azure OCR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../google/" title="Google OCR" class="md-nav__link">
+      Google OCR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sorting/" title="Sorting Strategy" class="md-nav__link">
+      Sorting Strategy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Examples
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../infography1/" title="Simple Infographic" class="md-nav__link">
+      Simple Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../infography2/" title="Complex Infographic" class="md-nav__link">
+      Complex Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scan1/" title="Simple page Layout" class="md-nav__link">
+      Simple page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Common page Layout
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Common page Layout" class="md-nav__link md-nav__link--active">
+      Common page Layout
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#medium-complexity-page-layout" class="md-nav__link">
+    Medium complexity page layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-raw-text-ouput" class="md-nav__link">
+    Azure Raw Text ouput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing" class="md-nav__link">
+    Azure BBoxing...
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure BBoxing...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing-text-output" class="md-nav__link">
+    Azure BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+    <nav class="md-nav" aria-label="Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-raw-text-output-block-level" class="md-nav__link">
+    Google Raw Text output (block level)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing" class="md-nav__link">
+    Google BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="Google BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing-output" class="md-nav__link">
+    Google BBoxing output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scan2/" title="Complex page Layout" class="md-nav__link">
+      Complex page Layout
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../known-limitations/" title="Known Limitations" class="md-nav__link">
+      Known Limitations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      About
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="About" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#medium-complexity-page-layout" class="md-nav__link">
+    Medium complexity page layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-raw-text-ouput" class="md-nav__link">
+    Azure Raw Text ouput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing" class="md-nav__link">
+    Azure BBoxing...
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure BBoxing...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-bboxing-text-output" class="md-nav__link">
+    Azure BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+    <nav class="md-nav" aria-label="Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-raw-text-output-block-level" class="md-nav__link">
+    Google Raw Text output (block level)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing" class="md-nav__link">
+    Google BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="Google BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-bboxing-output" class="md-nav__link">
+    Google BBoxing output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/puthurr/ocrlayout/blob/master/docs/examples/scan6.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Common page Layout</h1>
+                
+                <h2 id="medium-complexity-page-layout">Medium complexity page layout<a class="headerlink" href="#medium-complexity-page-layout" title="Permanent link">&para;</a></h2>
+<p><img alt="Screenshot" src="../img/scan6.png" /></p>
+<p>The above image has multiple layouts with more condensed text. </p>
+<p>You will see that some OCR engines will clearly expose their line processing while other would do a better raw output. </p>
+<p>Let's dive in each OCR Engine showing you how BBOXHelper helps increasing the coherence of the textual output. </p>
+<h2 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw Azure OCR output where we drew each line of text bounding boxes.
+<img alt="Screenshot" src="../img/scan6.azure.png" /></p>
+<h3 id="azure-raw-text-ouput">Azure Raw Text ouput<a class="headerlink" href="#azure-raw-text-ouput" title="Permanent link">&para;</a></h3>
+<p>The below output is not sorted in any just taken as-is from Azure Computer Vision response. </p>
+<div class="codehilite"><pre><span></span><code>Bulletin of the Geological Society of Malaysia 56 (2010) 27 - 33, doi: 10.7186/bgsm2010004
+Organic facies variation in lacustrine source rocks in the southern
+Malay Basin
+ABDUL JALIL MUHAMAD* &amp; AWANG SAPAWI AWANG JAMIL
+PETRONAS Research Sdn. Bhd..
+Lot 3288 &amp; 3289, Kawasan Institusi Bangi, 43000 Kajang, Selangor, Malaysia
+&quot;Email address: jalilmu@petronas.com.my
+Abstract - This paper discusses the source rock quality of the lacustrine shales within Groups K, L and M in the
+southern flank of the Malay Basin. This study is made possible through the use of state-of-the-art technique of gas
+chromatography / mass spectrometry / mass spectrometry or GCMSMS to provide highly selective measurements of
+biomarkers which are typically in low concentrations in source rock extracts, oils, and especially in condensates. Since
+only one well dataset is available, only the vertical variation in the source rock quality of the lacustrine shales is discussed.
+Stratigraphically, there is a noticeable change in the source rock quality within the three groups. In general, the TOC
+content of the lacustrine shale sequences in Groups K, L and M range from 0.35 to 2.00 wt%. Kerogen composition of
+these shales varies, showing mixtures of Type I to Type III indicating variable contributions from algal, bacterial and
+higher plant organic matter deposited in highly to less oxidising environments. This is indicated by hydrogen index (HI)
+values ranging from 137 to 403. Group L lacustrine shales provide the best oil-prone source rock with TOC values of
+0.45 to 1.95 wt% and HI values in the range of 300 to 400 indicating predominantly Type II kerogens. The variation in
+the source rock quality within the Groups K, L and M may be due to a combination of organic source input and factors
+controlling the preservation of organic matter within the environments of deposition. This observation is supported by
+data from screening and microscopic analyses of whole rocks and alkane and biomarker analyses of source rock extracts.
+It appears that Groups L and M shales, deposited in a lacustrine environment, received more algal input compared to
+terrigenous organic matter in a less oxic condition resulting in relatively better organic matter preservation. This is shown
+by the lower Pr/Ph ratio in the range of 3.1 to 4.0, lower Im/Ts ratio, moderate to high abundance of C30-diahopame and
+low abundance of tricyclics and gammacerane. On the other hand, the younger Group K had more fluvial influence and
+consequently received relatively more terrigenous organic matter input being deposited in a more oxidising environment.
+This is indicated by the higher Pr/Ph ratio (5.1 to 6.2), higher abundance of oleanane, predominance of C:29-sterames
+compared to C27- and C28-steranes, and trace amounts of tricyclics and gammacerame. It is also observed microscopically
+that Group K has higher abundance of terrigenous-derived vitrinite particles available for measurements as opposed to
+Groups L and M. The marked change in organic facies within the lacustrine shales from Groups L and M to Group K
+part of K times.
+is reflected in the evolution of the Malay Basin i.e. the transition from synrift to post-rift phase during the L and early
+Keywords: Malay basin, source rock quality, organic facies, lacustrine shale
+INTRODUCTION
+discovered oils in the basement rocks within the Anding
+Utara area. The aim of this paper is to discuss the vertical
+It has been well documented that the oils and
+variation in source rock quality of the lacustrine shales in
+condensates of the Malay Basin are being generated by
+two main source rocks - lacustrine and fluviodeltaic, with
+Groups K, L and M. For this purpose, Anding Barat Laut-1
+varying degrees of mixing between them (EPIC, 1994;
+(ABL-1) was selected as it is stratigraphically the deepest
+Mccaffrey et al., 1998). However, a recent study on the
+well within the study area (Figure 1). Lacustrine shales have
+petroleum systems of the northern part of the Malay Basin
+been recognised as perhaps the single most oil-prone facies,
+especially in the Southeast Asian Tertiary basins (Cole &amp;
+has also shown that fluvial marine source rocks could
+Crittenden, 1997). In the Malay Basin, it has been widely
+also generate these oils (Madon et al., 2006). The gradual
+change from lacustrine, through parallic and fluviodeltaic,
+accepted that lacustrine shales are closely associated with
+to open marine in the source rock successions reflects the
+the sediments of Groups K, L and M (Figure 2). The oldest
+lacustrine source rocks (Group M) were deposited in isolated
+sedimentary evolution of the basin. The lacustrine source
+rocks, consisting of shales, occur in the Oligocene/Early
+half-grabens during the synrift phase where sedimentation
+Miocene K, L, and M groups. Fluviodeltaic source rocks, on
+took place during the extentional phase of basin development,
+the other hand, found mainly in the Lower-Middle Miocene
+occuring as half-graben fills. The transition between the
+synrift and post-rift occurred during the L and early part of K
+I and E groups are mainly made up of coastal plain shales
+and coal carbonaceous shales.
+times. Although the lakes were perhaps small initially, they
+This paper is partly the result of a study carried out by
+may have evolved into larger lakes as the basin subsided
+PETRONAS to determine the source facies of the recently
+rapidly. The lateral and temporal extents of the large lake
+systems are not known, but periods of low and high stands
+</code></pre></div>
+
+
+<p>We can clearly see that the lines of text are processed in a certain order in Azure Computer Vision adding the noise of the continents in between "sentences".</p>
+<h3 id="azure-bboxing">Azure BBoxing...<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
+<p><img alt="Screenshot" src="../img/scan6.azure.bbox.png" />
+Boxes are drawn on top of the original image. </p>
+<p>The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. </p>
+<h4 id="azure-bboxing-text-output">Azure BBoxing text output<a class="headerlink" href="#azure-bboxing-text-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>Bulletin of the Geological Society of Malaysia 56 (2010) 27 - 33, doi: 10.7186/bgsm2010004
+Organic facies variation in lacustrine source rocks in the southern Malay Basin
+ABDUL JALIL MUHAMAD* &amp; AWANG SAPAWI AWANG JAMIL
+PETRONAS Research Sdn. Bhd.. Lot 3288 &amp; 3289, Kawasan Institusi Bangi, 43000 Kajang, Selangor, Malaysia &quot;Email address: jalilmu@petronas.com.my
+Abstract - This paper discusses the source rock quality of the lacustrine shales within Groups K, L and M in the southern flank of the Malay Basin. This study is made possible through the use of state-of-the-art technique of gas chromatography / mass spectrometry / mass spectrometry or GCMSMS to provide highly selective measurements of biomarkers which are typically in low concentrations in source rock extracts, oils, and especially in condensates. Since only one well dataset is available, only the vertical variation in the source rock quality of the lacustrine shales is discussed. Stratigraphically, there is a noticeable change in the source rock quality within the three groups. In general, the TOC content of the lacustrine shale sequences in Groups K, L and M range from 0.35 to 2.00 wt%. Kerogen composition of these shales varies, showing mixtures of Type I to Type III indicating variable contributions from algal, bacterial and higher plant organic matter deposited in highly to less oxidising environments. This is indicated by hydrogen index (HI) values ranging from 137 to 403. Group L lacustrine shales provide the best oil-prone source rock with TOC values of 0.45 to 1.95 wt% and HI values in the range of 300 to 400 indicating predominantly Type II kerogens. The variation in the source rock quality within the Groups K, L and M may be due to a combination of organic source input and factors controlling the preservation of organic matter within the environments of deposition. This observation is supported by data from screening and microscopic analyses of whole rocks and alkane and biomarker analyses of source rock extracts. It appears that Groups L and M shales, deposited in a lacustrine environment, received more algal input compared to terrigenous organic matter in a less oxic condition resulting in relatively better organic matter preservation. This is shown by the lower Pr/Ph ratio in the range of 3.1 to 4.0, lower Im/Ts ratio, moderate to high abundance of C30-diahopame and low abundance of tricyclics and gammacerane. On the other hand, the younger Group K had more fluvial influence and consequently received relatively more terrigenous organic matter input being deposited in a more oxidising environment. This is indicated by the higher Pr/Ph ratio (5.1 to 6.2), higher abundance of oleanane, predominance of C:29-sterames compared to C27- and C28-steranes, and trace amounts of tricyclics and gammacerame. It is also observed microscopically that Group K has higher abundance of terrigenous-derived vitrinite particles available for measurements as opposed to Groups L and M. The marked change in organic facies within the lacustrine shales from Groups L and M to Group K is reflected in the evolution of the Malay Basin i.e. the transition from synrift to post-rift phase during the L and early part of K times.
+Keywords: Malay basin, source rock quality, organic facies, lacustrine shale
+INTRODUCTION
+It has been well documented that the oils and condensates of the Malay Basin are being generated by two main source rocks - lacustrine and fluviodeltaic, with varying degrees of mixing between them (EPIC, 1994; Mccaffrey et al., 1998). However, a recent study on the petroleum systems of the northern part of the Malay Basin has also shown that fluvial marine source rocks could also generate these oils (Madon et al., 2006). The gradual change from lacustrine, through parallic and fluviodeltaic, to open marine in the source rock successions reflects the sedimentary evolution of the basin. The lacustrine source rocks, consisting of shales, occur in the Oligocene/Early Miocene K, L, and M groups. Fluviodeltaic source rocks, on the other hand, found mainly in the Lower-Middle Miocene I and E groups are mainly made up of coastal plain shales and coal carbonaceous shales. This paper is partly the result of a study carried out by PETRONAS to determine the source facies of the recently
+discovered oils in the basement rocks within the Anding Utara area. The aim of this paper is to discuss the vertical variation in source rock quality of the lacustrine shales in Groups K, L and M. For this purpose, Anding Barat Laut-1 (ABL-1) was selected as it is stratigraphically the deepest well within the study area (Figure 1). Lacustrine shales have been recognised as perhaps the single most oil-prone facies, especially in the Southeast Asian Tertiary basins (Cole &amp; Crittenden, 1997). In the Malay Basin, it has been widely accepted that lacustrine shales are closely associated with the sediments of Groups K, L and M (Figure 2). The oldest lacustrine source rocks (Group M) were deposited in isolated half-grabens during the synrift phase where sedimentation took place during the extentional phase of basin development, occuring as half-graben fills. The transition between the synrift and post-rift occurred during the L and early part of K times. Although the lakes were perhaps small initially, they may have evolved into larger lakes as the basin subsided rapidly. The lateral and temporal extents of the large lake systems are not known, but periods of low and high stands
+</code></pre></div>
+
+
+<h2 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw Google OCR output where we drew each line of text bounding boxes. Yellow colored are the words, red is for paragraphs and blue are for the blocks. See <a href="/google">Google Ocr</a> for more details.</p>
+<p><img alt="Screenshot" src="../img/scan6.google.png" /></p>
+<h3 id="google-raw-text-output-block-level">Google Raw Text output (block level)<a class="headerlink" href="#google-raw-text-output-block-level" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>Bulletin of the Geological Society of Malaysia 56 (2010) 27 – 33, doi: 10.7186/bgsm2010004
+Organic facies variation in lacustrine source rocks in the southern
+Malay Basin
+ABDUL JALIL MUHAMAD* &amp; AWANG SAPAWI AWANG JAMIL
+PETRONAS Research Sdn. Bhd.
+Lot 3288 &amp; 3289, Kawasan Institusi Bangi, 43000 Kajang, Selangor, Malaysia
+&quot;Email address: jalilmu@petronas.com.my
+Abstract — This paper discusses the source rock quality of the lacustrine shales within Groups K, L and M in the
+souther flank of the Malay Basin. This study is made possible through the use of state-of-the-art technique of gas
+chromatography / mass spectrometry / mass spectrometry or GCMSMS to provide highly selective measurements of
+biomarkers which are typically in low concentrations in source rock extracts, oils, and especially in condensates. Since
+only one well dataset is available, only the vertical variation in the source rock quality of the lacustrine shales is discussed.
+Stratigraphically, there is a noticeable change in the source rock quality within the three groups. In general, the TOC
+content of the lacustrine shale sequences in Groups K, L and M range from 0.35 to 2.00 wt%. Kerogen composition of
+these shales varies, showing mixtures of Type I to Type II indicating variable contributions from algal, bacterial and
+higher plant organic matter deposited in highly to less oxidising environments. This is indicated by hydrogen index (HI)
+values ranging from 137 to 403. Group L lacustrine shales provide the best oil-prone source rock with TOC values of
+0.45 to 1.95 wt% and HI values in the range of 300 to 400 indicating predominantly Type I kerogens. The variation in
+the source rock quality within the Groups K, L and M may be due to a combination of organic source input and factors
+controlling the preservation of organic matter within the environments of deposition. This observation is supported by
+data from screening and microscopic analyses of whole rocks and alkane and biomarker analyses of source rock extracts.
+It appears that Groups L and M shales, deposited in a lacustrine environment, received more algal input compared to
+terrigenous organic matter in a less oxic condition resulting in relatively better organic matter preservation. This is shown
+by the lower Pr/Ph ratio in the range of 3.1 to 4.0, lower Tm Ts ratio, moderate to high abundance of C30-diabopane and
+low abundance of tricyclics and gammacerane. On the other hand, the younger Group K had more fluvial influence and
+consequently received relatively more terrigenous organic matter input being deposited in a more oxidising environment
+This is indicated by the higher Pr/Ph ratio (5.1 to 6.2), higher abundance of oleanane, predominance of C29-steranes
+compared to C27- and C28-steranes, and trace amounts of tricyclics and gammacerane. It is also observed microscopically
+that Group K has higher abundance of terrigenous-derived vitrinite particles available for measurements as opposed to
+Groups L and M. The marked change in organic facies within the lacustrine shales from Groups L and M to Group K
+is reflected in the evolution of the Malay Basin i.e. the transition from syurift to post-rift phase during the L and early
+part of times.
+Keywords: Malay basin, source rock quality, organic facies, lacustrine sbale
+INTRODUCTION
+discovered oils in the basement rocks within the Anding
+Utara area. The aim of this paper is to discuss the vertical
+It has been well documented that the oils and variation in source rock quality of the lacustrine shales in
+condensates of the Malay Basin are being generated by Groups K, L and M. For this purpose. Anding Barat Laut-1
+two main source rocks - lacustrine and fluviodeltaic, with ABL-1) was selected as it is stratigraphically the deepest
+varying degrees of mixing between them (EPIC, 1994; well within the study area (Figure 1). Lacustrine shales have
+McCaffrey et al., 1998). However, a recent study on the been recognised as perhaps the single most oil-prone facies,
+petroleum systems of the northern part of the Malay Basin especially in the Southeast Asian Tertiary basins (Cole &amp;
+has also shown that fluvial marine source rocks could Crittenden, 1997). In the Malay Basin, it has been widely
+also generate these oils (Madon et al., 2006). The gradual accepted that lacustrine shales are closely associated with
+change from lacustrine, through parallic and fluviodeltaic, the sediments of Groups K, L and M (Figure 2). The oldest
+to open marine in the source rock successions reflects the lacustrine source rocks (Group M) were deposited in isolated
+sedimentary evolution of the basin. The lacustrine source half-grabens during the synrift phase where sedimentation
+rocks, consisting of shales, occur in the Oligocene/Early took place during the extentional phase of basin development,
+Miocene K, L, and M groups. Fluviodeltaic source rocks, on occurring as half-graben fills. The transition between the
+the other hand, found mainly in the Lower-Middle Miocene synrift and post-rift occured during the L and early part of K
+I and E groups are mainly made up of coastal plain shales times. Although the lakes were perhaps small initially, they
+and coal/carbonaceous shales.
+may have evolved into larger lakes as the basin subsided
+This paper is partly the result of a study carried out by rapidly. The lateral and temporal extents of the large lake
+PETRONAS to determine the source facies of the recently systems are not known, but periods of low and high stands
+</code></pre></div>
+
+
+<h3 id="google-bboxing">Google BBoxing<a class="headerlink" href="#google-bboxing" title="Permanent link">&para;</a></h3>
+<p>Boxes are drawn on the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
+<img alt="Screenshot" src="../img/scan6.google.bbox.png" /></p>
+<h4 id="google-bboxing-output">Google BBoxing output<a class="headerlink" href="#google-bboxing-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>Bulletin of the Geological Society of Malaysia 56 (2010) 27 – 33, doi: 10.7186/bgsm2010004
+Organic facies variation in lacustrine source rocks in the southern Malay Basin
+times.
+ABDUL JALIL MUHAMAD* &amp; AWANG SAPAWI AWANG JAMIL PETRONAS Research Sdn. Bhd. Lot 3288 &amp; 3289, Kawasan Institusi Bangi, 43000 Kajang, Selangor, Malaysia &quot;Email address: jalilmu@petronas.com.my Abstract — This paper discusses the source rock quality of the lacustrine shales within Groups K, L and M in the souther flank of the Malay Basin. This study is made possible through the use of state-of-the-art technique of gas chromatography / mass spectrometry / mass spectrometry or GCMSMS to provide highly selective measurements of biomarkers which are typically in low concentrations in source rock extracts, oils, and especially in condensates. Since only one well dataset is available, only the vertical variation in the source rock quality of the lacustrine shales is discussed. Stratigraphically, there is a noticeable change in the source rock quality within the three groups. In general, the TOC content of the lacustrine shale sequences in Groups K, L and M range from 0.35 to 2.00 wt%. Kerogen composition of these shales varies, showing mixtures of Type I to Type II indicating variable contributions from algal, bacterial and higher plant organic matter deposited in highly to less oxidising environments. This is indicated by hydrogen index (HI) values ranging from 137 to 403. Group L lacustrine shales provide the best oil-prone source rock with TOC values of 0.45 to 1.95 wt% and HI values in the range of 300 to 400 indicating predominantly Type I kerogens. The variation in the source rock quality within the Groups K, L and M may be due to a combination of organic source input and factors controlling the preservation of organic matter within the environments of deposition. This observation is supported by data from screening and microscopic analyses of whole rocks and alkane and biomarker analyses of source rock extracts. It appears that Groups L and M shales, deposited in a lacustrine environment, received more algal input compared to terrigenous organic matter in a less oxic condition resulting in relatively better organic matter preservation. This is shown by the lower Pr/Ph ratio in the range of 3.1 to 4.0, lower Tm Ts ratio, moderate to high abundance of C30-diabopane and low abundance of tricyclics and gammacerane. On the other hand, the younger Group K had more fluvial influence and consequently received relatively more terrigenous organic matter input being deposited in a more oxidising environment This is indicated by the higher Pr/Ph ratio (5.1 to 6.2), higher abundance of oleanane, predominance of C29-steranes compared to C27- and C28-steranes, and trace amounts of tricyclics and gammacerane. It is also observed microscopically that Group K has higher abundance of terrigenous-derived vitrinite particles available for measurements as opposed to Groups L and M. The marked change in organic facies within the lacustrine shales from Groups L and M to Group K is reflected in the evolution of the Malay Basin i.e. the transition from syurift to post-rift phase during the L and early part of 
+Keywords: Malay basin, source rock quality, organic facies, lacustrine sbale
+INTRODUCTION
+It has been well documented that the oils and  condensates of the Malay Basin are being generated by  two main source rocks - lacustrine and fluviodeltaic, with  varying degrees of mixing between them (EPIC, 1994;  McCaffrey et al., 1998). However, a recent study on the  petroleum systems of the northern part of the Malay Basin  has also shown that fluvial marine source rocks could  also generate these oils (Madon et al., 2006). The gradual  change from lacustrine, through parallic and fluviodeltaic,  to open marine in the source rock successions reflects the  sedimentary evolution of the basin. The lacustrine source  rocks, consisting of shales, occur in the Oligocene/Early  Miocene K, L, and M groups. Fluviodeltaic source rocks, on  the other hand, found mainly in the Lower-Middle Miocene  I and E groups are mainly made up of coastal plain shales  and coal/carbonaceous shales. This paper is partly the result of a study carried out by  PETRONAS to determine the source facies of the recently 
+discovered oils in the basement rocks within the Anding Utara area. The aim of this paper is to discuss the vertical variation in source rock quality of the lacustrine shales in Groups K, L and M. For this purpose. Anding Barat Laut-1 ABL-1) was selected as it is stratigraphically the deepest well within the study area (Figure 1). Lacustrine shales have been recognised as perhaps the single most oil-prone facies, especially in the Southeast Asian Tertiary basins (Cole &amp; Crittenden, 1997). In the Malay Basin, it has been widely accepted that lacustrine shales are closely associated with the sediments of Groups K, L and M (Figure 2). The oldest lacustrine source rocks (Group M) were deposited in isolated half-grabens during the synrift phase where sedimentation took place during the extentional phase of basin development, occurring as half-graben fills. The transition between the synrift and post-rift occured during the L and early part of K times. Although the lakes were perhaps small initially, they may have evolved into larger lakes as the basin subsided rapidly. The lateral and temporal extents of the large lake systems are not known, but periods of low and high stands
+</code></pre></div>
+
+
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>We still have some noise to reduce neverthelss both outputs are aligned and consistent.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../scan1/" title="Simple page Layout" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Simple page Layout
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../scan2/" title="Complex page Layout" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Complex page Layout
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
