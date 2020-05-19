@@ -234,9 +234,83 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Google OCR
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Google OCR" class="md-nav__link md-nav__link--active">
       Google OCR
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-documentation" class="md-nav__link">
+    Google Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-python-example" class="md-nav__link">
+    Google Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-google-integration" class="md-nav__link">
+    BBoxHelper Google Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper Google Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-our-sample-script" class="md-nav__link">
+    In our sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-are-dealing-with-a-google-json-response-string" class="md-nav__link">
+    If you are dealing with a Google JSON response string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -414,6 +488,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-documentation" class="md-nav__link">
+    Google Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-python-example" class="md-nav__link">
+    Google Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-google-integration" class="md-nav__link">
+    BBoxHelper Google Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper Google Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-our-sample-script" class="md-nav__link">
+    In our sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-are-dealing-with-a-google-json-response-string" class="md-nav__link">
+    If you are dealing with a Google JSON response string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,12 +565,147 @@
                 
                 
                 <h1 id="google-ocr">Google OCR<a class="headerlink" href="#google-ocr" title="Permanent link">&para;</a></h1>
-<p>Google </p>
-<ul>
-<li>Google Vision API Detect Text
-https://cloud.google.com/vision/docs
-https://cloud.google.com/vision/docs/ocr#vision_text_detection-python</li>
-</ul>
+<p>We support Google Cloud Text Detection object aka DOCUMENT_TEXT_DETECTION. </p>
+<blockquote>
+<p>DOCUMENT_TEXT_DETECTION also extracts text from an image, but the response is optimized for dense text and documents. The JSON includes pages,blocks,paragraphs,words, symbols and break information, including confidence scores and bounding boxes. </p>
+</blockquote>
+<h2 id="google-documentation">Google Documentation<a class="headerlink" href="#google-documentation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://cloud.google.com/vision/docs">Google Vision API</a></li>
+<li><a href="https://cloud.google.com/vision/docs/ocr#vision_text_detection-python">Simple Text Detection</a></li>
+<li><a href="https://cloud.google.com/vision/docs/handwriting">Document Text Detection - handwriting</a></li>
+<li><a href="https://cloud.google.com/vision/docs/pdf">Document Text Detection - pdf/tiff</a></li>
+</ol>
+<h2 id="google-python-example">Google Python Example<a class="headerlink" href="#google-python-example" title="Permanent link">&para;</a></h2>
+<p>The below example is provide by Google where you see the actual data model of its response</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">detect_document</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Detects document features in an image.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">vision</span>
+    <span class="kn">import</span> <span class="nn">io</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">vision</span><span class="o">.</span><span class="n">ImageAnnotatorClient</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">vision</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="o">.</span><span class="n">pages</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">page</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Block confidence: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">confidence</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">block</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Paragraph confidence: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">paragraph</span><span class="o">.</span><span class="n">confidence</span><span class="p">))</span>
+
+                <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">paragraph</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
+                    <span class="n">word_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+                        <span class="n">symbol</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">symbols</span>
+                    <span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Word text: </span><span class="si">{}</span><span class="s1"> (confidence: </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">word_text</span><span class="p">,</span> <span class="n">word</span><span class="o">.</span><span class="n">confidence</span><span class="p">))</span>
+
+                    <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">symbols</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Symbol: </span><span class="si">{}</span><span class="s1"> (confidence: </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">symbol</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">symbol</span><span class="o">.</span><span class="n">confidence</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s1">&#39;</span><span class="si">{}</span><span class="se">\n</span><span class="s1">For more info on error messages, check: &#39;</span>
+            <span class="s1">&#39;https://cloud.google.com/apis/design/errors&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h2 id="bboxhelper-google-integration">BBoxHelper Google Integration<a class="headerlink" href="#bboxhelper-google-integration" title="Permanent link">&para;</a></h2>
+<h3 id="in-our-sample-script">In our sample script<a class="headerlink" href="#in-our-sample-script" title="Permanent link">&para;</a></h3>
+<p>We follow the above example. We capture the response object. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>We then pass the full_text_annotation <strong>object</strong> to the BBoxHelper processing method <strong>processGoogleOCRResponse()</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Create BBOX OCR Response from Google&#39;s response object</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">,</span><span class="n">boxSeparator</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<h3 id="behind-the-scene">Behind the scene...<a class="headerlink" href="#behind-the-scene" title="Permanent link">&para;</a></h3>
+<p>To avoid adding OCR engines direct dependencies in the code, for Google OCR, we only support passing the full_text_annotation object in <strong>processGoogleOCRResponse()</strong></p>
+<p>We do similar iterations to build a line concept from Google annotation object.
+<strong>bboxhelper.py</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">BBOXPageLayout</span><span class="p">():</span>
+    <span class="c1">#...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_google</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">page</span><span class="p">):</span>
+        <span class="n">lines</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">line_counter</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">line_text</span> <span class="o">=</span><span class="s2">&quot;&quot;</span>
+        <span class="n">line_boxes</span><span class="o">=</span><span class="p">[]</span>
+        <span class="c1"># Create the concept of lines for Google ocr response. </span>
+        <span class="k">for</span> <span class="n">idb</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">blocks</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">block</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">paragraph</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
+                    <span class="c1"># Test if the enxt word is within range of the previous one. </span>
+                    <span class="c1"># Google OCR doesn&#39;t split nicely text set in columns.</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_boxes</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+                        <span class="n">xdiff</span><span class="o">=</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">line_boxes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">xdiff</span> <span class="o">&gt;</span> <span class="n">bboxconfig</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;pixel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">GoogleLineBreakThresholdInPixel</span><span class="p">:</span>
+                            <span class="n">bboxlogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Google|Line Break </span><span class="si">{0}</span><span class="s2">| </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">xdiff</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">line_counter</span><span class="p">),</span><span class="n">line_text</span><span class="p">))</span>
+                            <span class="c1"># Line break</span>
+                            <span class="n">line</span><span class="o">=</span><span class="n">BBOXNormalizedLine</span><span class="o">.</span><span class="n">from_google</span><span class="p">(</span><span class="n">line_counter</span><span class="p">,</span><span class="n">line_text</span><span class="p">,</span><span class="n">line_boxes</span><span class="p">)</span>
+                            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                            <span class="n">line_text</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+                            <span class="n">line_counter</span><span class="o">+=</span><span class="mi">1</span>
+                            <span class="n">line_boxes</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+                    <span class="n">line_boxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">bounding_box</span><span class="o">.</span><span class="n">vertices</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">symbols</span><span class="p">:</span>
+                        <span class="n">line_text</span><span class="o">+=</span><span class="n">symbol</span><span class="o">.</span><span class="n">text</span>
+                        <span class="k">if</span> <span class="n">symbol</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">detected_break</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">symbol</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">detected_break</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+                                <span class="n">line_text</span><span class="o">+=</span><span class="s2">&quot; &quot;</span>
+                            <span class="k">elif</span> <span class="n">symbol</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">detected_break</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]:</span>
+                                <span class="n">bboxlogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Google|Detected Break </span><span class="si">{0}</span><span class="s2">| </span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">detected_break</span><span class="o">.</span><span class="n">type</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">line_counter</span><span class="p">),</span><span class="n">line_text</span><span class="p">))</span>
+                                <span class="c1"># Line Break</span>
+                                <span class="n">line</span><span class="o">=</span><span class="n">BBOXNormalizedLine</span><span class="o">.</span><span class="n">from_google</span><span class="p">(</span><span class="n">line_counter</span><span class="p">,</span><span class="n">line_text</span><span class="p">,</span><span class="n">line_boxes</span><span class="p">)</span>
+                                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                                <span class="n">line_text</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+                                <span class="n">line_counter</span><span class="o">+=</span><span class="mi">1</span>
+                                <span class="n">line_boxes</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">Id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">Width</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">width</span><span class="p">,</span><span class="n">Height</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">height</span><span class="p">,</span><span class="n">Lines</span><span class="o">=</span><span class="n">lines</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BBOXOCRResponse</span><span class="p">():</span>
+    <span class="c1">#...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_google</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="n">pages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">BBOXPageLayout</span><span class="o">.</span><span class="n">from_google</span><span class="p">,</span><span class="n">document</span><span class="o">.</span><span class="n">pages</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">,</span><span class="n">original_text</span><span class="o">=</span><span class="n">document</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="n">recognitionResults</span><span class="o">=</span><span class="n">pages</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BBoxHelper</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">processGoogleOCRResponse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">input</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; processGoogleOCRResponse method</span>
+<span class="sd">            Process an OCR Response input from Google and returns a new BBox format OCR response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#Create an BBOXOCRResponse object from Google input</span>
+        <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_google</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h3 id="if-you-are-dealing-with-a-google-json-response-string">If you are dealing with a Google JSON response string<a class="headerlink" href="#if-you-are-dealing-with-a-google-json-response-string" title="Permanent link">&para;</a></h3>
+<p>Our Google sample script shows how to read JSON string from a file and rebuild the Google response object </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use local OCR cached response when available</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RESULTS_FOLDER</span><span class="p">,</span> <span class="n">imgname</span><span class="o">+</span><span class="s2">&quot;.google.vision.json&quot;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cachefile</span><span class="p">:</span>
+    <span class="n">json_string</span> <span class="o">=</span> <span class="n">cachefile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">json_format</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">json_string</span><span class="p">,</span> <span class="n">vision</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">AnnotateImageResponse</span><span class="p">())</span>
+</code></pre></div>
+
+
+<p>then call the processGoogleOCRResponse() as usual. </p>
                 
               
               

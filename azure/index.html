@@ -222,9 +222,83 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Azure OCR
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Azure OCR" class="md-nav__link md-nav__link--active">
       Azure OCR
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-computer-vision-cognitive-services-computer-vision-documentation" class="md-nav__link">
+    Azure Computer Vision Cognitive Services Computer Vision Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-python-example" class="md-nav__link">
+    Azure Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-azure-cv-integration" class="md-nav__link">
+    BBoxHelper Azure CV Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper Azure CV Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-our-sample-script" class="md-nav__link">
+    In our sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-are-dealing-with-a-azure-cv-json-response-string" class="md-nav__link">
+    If you are dealing with a Azure CV JSON response string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -414,6 +488,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-computer-vision-cognitive-services-computer-vision-documentation" class="md-nav__link">
+    Azure Computer Vision Cognitive Services Computer Vision Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-python-example" class="md-nav__link">
+    Azure Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-azure-cv-integration" class="md-nav__link">
+    BBoxHelper Azure CV Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper Azure CV Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-our-sample-script" class="md-nav__link">
+    In our sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-are-dealing-with-a-azure-cv-json-response-string" class="md-nav__link">
+    If you are dealing with a Azure CV JSON response string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,13 +565,79 @@
                 
                 
                 <h1 id="azure-ocr">Azure OCR<a class="headerlink" href="#azure-ocr" title="Permanent link">&para;</a></h1>
-<p>BBOHelper supports the conversion of Azure OCR Read API</p>
-<p>Structure of an OCR Response 
-Response -&gt; Pages -&gt; Lines - Words</p>
-<ul>
-<li>Azure Batch Read API response. 
-https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#read-api</li>
-</ul>
+<p>BBOHelper supports natively Azure Cognitive Services Computer Vision OCR Read API</p>
+<p>By native support, I mean our data model follow closely the OCR data model. </p>
+<blockquote>
+<p>The Read API detects text content in an image using our latest recognition models and converts the identified text into a machine-readable character stream. It's optimized for text-heavy images (such as documents that have been digitally scanned) and for images with a lot of visual noise. It will determine which recognition model to use for each line of text, supporting images with both printed and handwritten text. The Read API executes asynchronously because larger documents can take several minutes to return a result.</p>
+<p>The Read operation maintains the original line groupings of recognized words in its output. Each line comes with bounding box coordinates, and each word within the line also has its own coordinates. If a word was recognized with low confidence, that information is conveyed as well. </p>
+</blockquote>
+<h2 id="azure-computer-vision-cognitive-services-computer-vision-documentation">Azure Computer Vision Cognitive Services Computer Vision Documentation<a class="headerlink" href="#azure-computer-vision-cognitive-services-computer-vision-documentation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#read-api">Computer Vision API</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#image-requirements">Image Requirements</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-python/tree/76a0d91c32a79561a7d5666e421908e7c4cffc6a/sdk/cognitiveservices/azure-cognitiveservices-vision-computervision">Computer Vision API Python SDK</a></li>
+<li><a href="https://azure.github.io/azure-sdk-for-python/">Azure SDK for Python</a></li>
+</ol>
+<h2 id="azure-python-example">Azure Python Example<a class="headerlink" href="#azure-python-example" title="Permanent link">&para;</a></h2>
+<p>You can refer to this <a href="https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/vision/computer_vision_samples.py">example</a></p>
+<h2 id="bboxhelper-azure-cv-integration">BBoxHelper Azure CV Integration<a class="headerlink" href="#bboxhelper-azure-cv-integration" title="Permanent link">&para;</a></h2>
+<h3 id="in-our-sample-script">In our sample script<a class="headerlink" href="#in-our-sample-script" title="Permanent link">&para;</a></h3>
+<p>We follow the above example. We capture the response object as string.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>We then pass it to the BBoxHelper processing method <strong>processAzureOCRResponse()</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Create BBOX OCR Response from Azure CV string response</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">boxSeparator</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<h3 id="behind-the-scene">Behind the scene...<a class="headerlink" href="#behind-the-scene" title="Permanent link">&para;</a></h3>
+<p>Our BBoxHelper is fully compatible with Azure response model with pages/lines thus the parsing is pretty straighforward. 
+The method <strong>processAzureOCRResponse()</strong> supports passing a string, JSON object or an existing BBOXOCRResponse. 
+<strong>bboxhelper.py</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">BBOXPageLayout</span><span class="p">():</span>
+    <span class="c1">#...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_azure</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">lines</span><span class="o">=</span><span class="p">[</span><span class="n">BBOXNormalizedLine</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;lines&quot;</span><span class="p">])]</span> 
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">Id</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;page&quot;</span><span class="p">],</span><span class="n">ClockwiseOrientation</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;clockwiseOrientation&quot;</span><span class="p">],</span><span class="n">Width</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">],</span><span class="n">Height</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">],</span><span class="n">Unit</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;unit&quot;</span><span class="p">],</span><span class="n">Lines</span><span class="o">=</span><span class="n">lines</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BBOXOCRResponse</span><span class="p">():</span>
+    <span class="c1">#...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_azure</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">pages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">BBOXPageLayout</span><span class="o">.</span><span class="n">from_azure</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;recognitionResults&quot;</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">],</span><span class="n">recognitionResults</span><span class="o">=</span><span class="n">pages</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BBoxHelper</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">processAzureOCRResponse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">input</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; processAzureOCRResponse method</span>
+<span class="sd">            Process an OCR Response input from Azure and returns a new BBox format OCR response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#load the input json into a response object</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">input</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">BBOXOCRResponse</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="nb">input</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">)</span>        
+</code></pre></div>
+
+
+<h3 id="if-you-are-dealing-with-a-azure-cv-json-response-string">If you are dealing with a Azure CV JSON response string<a class="headerlink" href="#if-you-are-dealing-with-a-azure-cv-json-response-string" title="Permanent link">&para;</a></h3>
+<p>Our Azure sample script shows how to read JSON string from a file. </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use local OCR cached response when available</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RESULTS_FOLDER</span><span class="p">,</span> <span class="n">imgname</span><span class="o">+</span><span class="s2">&quot;.azure.batch_read.json&quot;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cachefile</span><span class="p">:</span>
+    <span class="n">ocrresponse</span> <span class="o">=</span> <span class="n">cachefile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>then call the processAzureOCRResponse() as usual. </p>
                 
               
               

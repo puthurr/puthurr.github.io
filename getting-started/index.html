@@ -268,6 +268,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#under-the-project-python-directory" class="md-nav__link">
+    Under the project python directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#each-sample-script-will" class="md-nav__link">
+    Each sample script will
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changing-the-input-and-output-directories-used-in-the-samples-scripts" class="md-nav__link">
     Changing the input and output directories used in the samples scripts
   </a>
@@ -559,6 +573,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#under-the-project-python-directory" class="md-nav__link">
+    Under the project python directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#each-sample-script-will" class="md-nav__link">
+    Each sample script will
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#changing-the-input-and-output-directories-used-in-the-samples-scripts" class="md-nav__link">
     Changing the input and output directories used in the samples scripts
   </a>
@@ -643,25 +671,29 @@ COMPUTERVISION_LOCATION=&quot;westeurope&quot;
 
 
 <h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
-<p>Refer to Google documentation to authenticate the Google Client : https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication</p>
+<p>Refer to Google documentation to authenticate the <a href="https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication">Google Client</a></p>
 <h2 id="bboxhelper-run-the-sample-scripts">BBoxHelper - Run the Sample script(s)<a class="headerlink" href="#bboxhelper-run-the-sample-scripts" title="Permanent link">&para;</a></h2>
 <p>Each supported OCR platform has a corresponding testing script </p>
-<p>Under the project python directory,
-1. execute the <strong>bboxtester.azure.py</strong> for testing with Microsoft Azure Computer Vision OCR. 
-2. execute the <strong>bboxtester.google.py</strong> for testing with Google Computer Vision OCR. </p>
-<p>Each sample script will
-1. process all images located under the images script (one level of the python dir), 
-2. call the corresponding OCR service, 
-3. persist the raw ocr response on disk in the tests-results or the directory of your choice
-4. persist the original image with the bouding boxes of the raw OCR response
-5. call on the BBOx Helper processOCRResponse() method. 
-6. persist the original image with the bouding boxes of the BBoxHelper OCR response .</p>
+<h3 id="under-the-project-python-directory">Under the project python directory<a class="headerlink" href="#under-the-project-python-directory" title="Permanent link">&para;</a></h3>
+<ol>
+<li>execute the <strong>bboxtester.azure.py</strong> for testing with Microsoft Azure Computer Vision OCR. </li>
+<li>execute the <strong>bboxtester.google.py</strong> for testing with Google Computer Vision OCR. </li>
+</ol>
+<h3 id="each-sample-script-will">Each sample script will<a class="headerlink" href="#each-sample-script-will" title="Permanent link">&para;</a></h3>
+<ol>
+<li>process all images located under the images script (one level of the python dir), </li>
+<li>call the corresponding OCR service, </li>
+<li>persist the raw ocr response on disk in the tests-results or the directory of your choice</li>
+<li>persist the original image with the bouding boxes of the raw OCR response</li>
+<li>call on the BBOx Helper processOCRResponse() method. </li>
+<li>persist the original image with the bouding boxes of the BBoxHelper OCR response .</li>
+</ol>
 <h3 id="changing-the-input-and-output-directories-used-in-the-samples-scripts">Changing the input and output directories used in the samples scripts<a class="headerlink" href="#changing-the-input-and-output-directories-used-in-the-samples-scripts" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>IMAGES_FOLDER = os.path.join(os.path.dirname(
-    os.path.realpath(__file__)), &quot;../images&quot;)
+<div class="codehilite"><pre><span></span><code><span class="n">IMAGES_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;../images&quot;</span><span class="p">)</span>
 
-RESULTS_FOLDER = os.path.join(os.path.dirname(
-    os.path.realpath(__file__)), &quot;../tests-results&quot;)
+<span class="n">RESULTS_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;../tests-results&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -669,50 +701,51 @@ RESULTS_FOLDER = os.path.join(os.path.dirname(
 <h3 id="calling-the-bboxhelper-main-method">Calling the BBoxHelper main method<a class="headerlink" href="#calling-the-bboxhelper-main-method" title="Permanent link">&para;</a></h3>
 <h4 id="for-azure">For Azure<a class="headerlink" href="#for-azure" title="Permanent link">&para;</a></h4>
 <p>If you have the response object from client.get_read_operation_result() </p>
-<div class="codehilite"><pre><span></span><code># Azure Computer Vision Call
-with open(os.path.join(IMAGES_FOLDER, filename), &quot;rb&quot;) as image_stream:
-    job = client.batch_read_file_in_stream(
-        image=image_stream,
-        raw=True
-    )
-operation_id = job.headers[&#39;Operation-Location&#39;].split(&#39;/&#39;)[-1]
+<div class="codehilite"><pre><span></span><code><span class="c1"># Azure Computer Vision Call</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_stream</span><span class="p">:</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">batch_read_file_in_stream</span><span class="p">(</span>
+        <span class="n">image</span><span class="o">=</span><span class="n">image_stream</span><span class="p">,</span>
+        <span class="n">raw</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="n">operation_id</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Operation-Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-image_analysis = client.get_read_operation_result(operation_id,raw=True)
-while image_analysis.output.status in [&#39;NotStarted&#39;, &#39;Running&#39;]:
-    time.sleep(1)
-    image_analysis = client.get_read_operation_result(operation_id=operation_id,raw=True)
-...
-ocrresponse=image_analysis.response.content.decode(&quot;utf-8&quot;)
-bboxresponse=BBoxHelper().processAzureOCRResponse(ocrresponse,sortingAlgo=BBoxSort.contoursSort)
+<span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_read_operation_result</span><span class="p">(</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">image_analysis</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NotStarted&#39;</span><span class="p">,</span> <span class="s1">&#39;Running&#39;</span><span class="p">]:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_read_operation_result</span><span class="p">(</span><span class="n">operation_id</span><span class="o">=</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">ocrresponse</span><span class="o">=</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p>The BBoxHelper().processAzureOCRResponse() method will accept a string, dict (JSON) or BBOXOCRResponse instance. </p>
 <p>Passing a dict object (really if you want to)</p>
-<div class="codehilite"><pre><span></span><code>bboxresponse=BBoxHelper().processAzureOCRResponse(json.loads(ocrresponse),sortingAlgo=BBoxSort.contoursSort)
+<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">),</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p>You can create an BBOXOCRResponse object and send it as is as well. This is usefull to draw the bounding boxes Before and After (see the sample script)</p>
-<div class="codehilite"><pre><span></span><code>ocrresponse=BBOXOCRResponse.from_azure(json.loads(ocrresponse))
-bboxresponse=BBoxHelper().processAzureOCRResponse(copy.deepcopy(ocrresponse),sortingAlgo=BBoxSort.contoursSort)
+<div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">),</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p><strong>Note</strong> : BBoxHelper.processOCRResponse() manipulates the original object, if you need to keep the "original" ocr response make sure to do a copy.deepcopy() beforehands.</p>
 <h4 id="for-google">For Google<a class="headerlink" href="#for-google" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>response = client.document_text_detection(image=image)
-document = response.full_text_annotation
-...
-bboxresponse=BBoxHelper().processGoogleOCRResponse(document)
+<div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">)</span>
 </code></pre></div>
 
 
 <h3 id="sample-scripts-output">Sample scripts Output<a class="headerlink" href="#sample-scripts-output" title="Permanent link">&para;</a></h3>
 <p>Each Sample script will output </p>
-<p>Azure Annotated Image where we draw the lines its OCR 
-Azure OCR JSON 
-Azure OCR Text (textual information)</p>
+<ul>
+<li>Azure Annotated Image where we draw the lines its OCR </li>
+<li>Azure OCR JSON 
+Azure OCR Text (textual information)</li>
+</ul>
 <p>Google Annotated Image where we draw the lines its OCR 
 Google OCR Text (textual information)</p>
 <p>Those outputs allow you to evaluate the different OCR output visually. </p>
