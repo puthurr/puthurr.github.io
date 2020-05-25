@@ -254,11 +254,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-reference-prep-your-ocr-engines" class="md-nav__link">
-    For reference: prep your OCR engine(s)
+  <a href="#prepare-your-ocr-engines-calls" class="md-nav__link">
+    Prepare your OCR engine(s) call(s)
   </a>
   
-    <nav class="md-nav" aria-label="For reference: prep your OCR engine(s)">
+    <nav class="md-nav" aria-label="Prepare your OCR engine(s) call(s)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -289,8 +289,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-azure" class="md-nav__link">
-    For Azure
+  <a href="#for-azure-cv-package-060" class="md-nav__link">
+    For Azure CV package &gt;=0.6.0
   </a>
   
 </li>
@@ -308,16 +308,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bboxhelper-run-the-sample-script" class="md-nav__link">
-    BBoxHelper - Run the sample script
+  <a href="#bboxhelper-response-object" class="md-nav__link">
+    BBoxHelper - Response object
   </a>
   
-    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-run-the-sample-script-in-github" class="md-nav__link">
+    BBoxHelper - Run the sample script in github
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script in github">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#under-the-project-python-directory" class="md-nav__link">
-    Under the project python directory
+  <a href="#under-the-project-python-directory-in-a-terminal" class="md-nav__link">
+    Under the project python directory in a terminal
   </a>
   
 </li>
@@ -373,6 +380,13 @@
           <li class="md-nav__item">
   <a href="#changing-the-default-input-and-output-directories-used-in-the-sample-script" class="md-nav__link">
     Changing the default input and output directories used in the sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    DISCLAIMER
   </a>
   
 </li>
@@ -614,11 +628,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-reference-prep-your-ocr-engines" class="md-nav__link">
-    For reference: prep your OCR engine(s)
+  <a href="#prepare-your-ocr-engines-calls" class="md-nav__link">
+    Prepare your OCR engine(s) call(s)
   </a>
   
-    <nav class="md-nav" aria-label="For reference: prep your OCR engine(s)">
+    <nav class="md-nav" aria-label="Prepare your OCR engine(s) call(s)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -649,8 +663,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-azure" class="md-nav__link">
-    For Azure
+  <a href="#for-azure-cv-package-060" class="md-nav__link">
+    For Azure CV package &gt;=0.6.0
   </a>
   
 </li>
@@ -668,16 +682,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bboxhelper-run-the-sample-script" class="md-nav__link">
-    BBoxHelper - Run the sample script
+  <a href="#bboxhelper-response-object" class="md-nav__link">
+    BBoxHelper - Response object
   </a>
   
-    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-run-the-sample-script-in-github" class="md-nav__link">
+    BBoxHelper - Run the sample script in github
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script in github">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#under-the-project-python-directory" class="md-nav__link">
-    Under the project python directory
+  <a href="#under-the-project-python-directory-in-a-terminal" class="md-nav__link">
+    Under the project python directory in a terminal
   </a>
   
 </li>
@@ -737,6 +758,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    DISCLAIMER
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -778,7 +806,7 @@
 </code></pre></div>
 
 
-<h2 id="for-reference-prep-your-ocr-engines">For reference: prep your OCR engine(s)<a class="headerlink" href="#for-reference-prep-your-ocr-engines" title="Permanent link">&para;</a></h2>
+<h2 id="prepare-your-ocr-engines-calls">Prepare your OCR engine(s) call(s)<a class="headerlink" href="#prepare-your-ocr-engines-calls" title="Permanent link">&para;</a></h2>
 <p>Depending on your preferred OCR service Microsoft Azure or Google</p>
 <h3 id="microsoft-azure">Microsoft Azure<a class="headerlink" href="#microsoft-azure" title="Permanent link">&para;</a></h3>
 <p>Set the below 2 environment variables in your OS env. </p>
@@ -788,58 +816,72 @@ COMPUTERVISION_LOCATION
 
 
 <p>The ComputerVision location refers to the region you have registered your Azure Computer Vision service. You only need the region there. </p>
-<div class="codehilite"><pre><span></span><code>COMPUTERVISION_SUBSCRIPTION_KEY=&quot;...&quot;
-COMPUTERVISION_LOCATION=&quot;westeurope&quot;
+<div class="codehilite"><pre><span></span><code><span class="n">COMPUTERVISION_SUBSCRIPTION_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+<span class="n">COMPUTERVISION_LOCATION</span><span class="o">=</span><span class="s2">&quot;westeurope&quot;</span>
 </code></pre></div>
 
 
 <h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
 <p>Refer to Google documentation to authenticate the <a href="https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication">Google Client</a></p>
 <h2 id="calling-the-bboxhelper-main-method">Calling the BBoxHelper main method<a class="headerlink" href="#calling-the-bboxhelper-main-method" title="Permanent link">&para;</a></h2>
-<h4 id="for-azure">For Azure<a class="headerlink" href="#for-azure" title="Permanent link">&para;</a></h4>
-<p>If you have the response object from client.get_read_operation_result() </p>
+<p>if you are not familiar with Azure CV and/or Google Document Text detection first hands I would encourage you to jump the <a href="#bboxhelper-run-the-sample-script-in-github">Sample script</a> section. </p>
+<h4 id="for-azure-cv-package-060">For Azure CV package &gt;=0.6.0<a class="headerlink" href="#for-azure-cv-package-060" title="Permanent link">&para;</a></h4>
+<p>If you have the response object from client.get_read_result() </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Azure Computer Vision Call</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_stream</span><span class="p">:</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">batch_read_file_in_stream</span><span class="p">(</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">azure_client</span><span class="o">.</span><span class="n">read_in_stream</span><span class="p">(</span>
         <span class="n">image</span><span class="o">=</span><span class="n">image_stream</span><span class="p">,</span>
         <span class="n">raw</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
 <span class="n">operation_id</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Operation-Location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_read_operation_result</span><span class="p">(</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">image_analysis</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NotStarted&#39;</span><span class="p">,</span> <span class="s1">&#39;Running&#39;</span><span class="p">]:</span>
+<span class="n">image_analysis</span> <span class="o">=</span> <span class="n">azure_client</span><span class="o">.</span><span class="n">get_read_result</span><span class="p">(</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">while</span> <span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">status</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;notstarted&#39;</span><span class="p">,</span> <span class="s1">&#39;running&#39;</span><span class="p">]:</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">image_analysis</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_read_operation_result</span><span class="p">(</span><span class="n">operation_id</span><span class="o">=</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">image_analysis</span> <span class="o">=</span> <span class="n">azure_client</span><span class="o">.</span><span class="n">get_read_result</span><span class="p">(</span><span class="n">operation_id</span><span class="o">=</span><span class="n">operation_id</span><span class="p">,</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">ocrresponse</span><span class="o">=</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p>The BBoxHelper().processAzureOCRResponse() method will accept a string, dict (JSON) or BBOXOCRResponse instance. </p>
 <p>Passing a dict object (really if you want to)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">),</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
 </code></pre></div>
 
 
 <p>You can create an BBOXOCRResponse object and send it as is as well. This is usefull to draw the bounding boxes Before and After (see the sample script)</p>
 <div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
-<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">),</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">)</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
 </code></pre></div>
 
 
-<p><strong>Note</strong> : BBoxHelper.processOCRResponse() manipulates the original object, if you need to keep the "original" ocr response make sure to do a copy.deepcopy() beforehands.</p>
+<p><strong>Note</strong> : because of its full compatibility with Azure OCR, BBoxHelper.processAzureOCRResponse() manipulates the original object, if you need to keep the "original" ocr response make sure to do a copy.deepcopy() beforehands.</p>
 <h4 id="for-google">For Google<a class="headerlink" href="#for-google" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 
 
-<h2 id="bboxhelper-run-the-sample-script">BBoxHelper - Run the sample script<a class="headerlink" href="#bboxhelper-run-the-sample-script" title="Permanent link">&para;</a></h2>
-<p>Provided a single sample script to showcase how BBoxHelper runs against Azure and Google OCR engines output. </p>
-<h3 id="under-the-project-python-directory">Under the project python directory<a class="headerlink" href="#under-the-project-python-directory" title="Permanent link">&para;</a></h3>
-<p>Execute the <strong>bboxtester.py</strong> for testing with Microsoft Azure CV or Google CV. </p>
+<h2 id="bboxhelper-response-object">BBoxHelper - Response object<a class="headerlink" href="#bboxhelper-response-object" title="Permanent link">&para;</a></h2>
+<ul>
+<li>status : reflect the original status of your ocr request response. </li>
+<li>original_text : the original text provide by the default OCR engine when relevant. </li>
+<li><strong>text</strong> : representing the sorted text of all processed pages. </li>
+<li>pages : List of all pages. The OCR Engines we support allows you to send full PDF or TIFF multiple pages. </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2 id="bboxhelper-run-the-sample-script-in-github">BBoxHelper - Run the sample script in github<a class="headerlink" href="#bboxhelper-run-the-sample-script-in-github" title="Permanent link">&para;</a></h2>
+<p>We provided a single sample script to showcase how BBoxHelper runs against Azure and Google OCR engines output. </p>
+<h3 id="under-the-project-python-directory-in-a-terminal">Under the project python directory in a terminal<a class="headerlink" href="#under-the-project-python-directory-in-a-terminal" title="Permanent link">&para;</a></h3>
+<p>Execute the sample script <strong><a href="https://github.com/puthurr/ocrlayout/blob/master/python/bboxtester.py">bboxtester.py</a></strong> for testing with Microsoft Azure CV or Google CV. </p>
 <h3 id="sample-script-invocation">Sample script invocation<a class="headerlink" href="#sample-script-invocation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>python3 bboxtester.py -h
 </code></pre></div>
@@ -928,6 +970,8 @@ optional arguments:
 
 
 <p><strong>NOTE</strong> The RESULTS_FOLDER is created upon running the sample script if not already existing. </p>
+<h3 id="disclaimer">DISCLAIMER<a class="headerlink" href="#disclaimer" title="Permanent link">&para;</a></h3>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
                 
               
               
