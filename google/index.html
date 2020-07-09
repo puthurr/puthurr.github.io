@@ -297,8 +297,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#if-you-are-dealing-with-a-google-json-response-string" class="md-nav__link">
-    If you are dealing with a Google JSON response string
+  <a href="#reading-the-google-json-response-from-a-file" class="md-nav__link">
+    Reading the Google JSON response from a file
   </a>
   
 </li>
@@ -533,8 +533,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#if-you-are-dealing-with-a-google-json-response-string" class="md-nav__link">
-    If you are dealing with a Google JSON response string
+  <a href="#reading-the-google-json-response-from-a-file" class="md-nav__link">
+    Reading the Google JSON response from a file
   </a>
   
 </li>
@@ -627,7 +627,7 @@
 
 <p>We then pass the full_text_annotation <strong>object</strong> to the BBoxHelper processing method <strong>processGoogleOCRResponse()</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Create BBOX OCR Response from Google&#39;s response object</span>
-<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">,</span><span class="n">boxSeparator</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">])</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -671,16 +671,20 @@
 </code></pre></div>
 
 
-<h3 id="if-you-are-dealing-with-a-google-json-response-string">If you are dealing with a Google JSON response string<a class="headerlink" href="#if-you-are-dealing-with-a-google-json-response-string" title="Permanent link">&para;</a></h3>
+<h3 id="reading-the-google-json-response-from-a-file">Reading the Google JSON response from a file<a class="headerlink" href="#reading-the-google-json-response-from-a-file" title="Permanent link">&para;</a></h3>
 <p>Our Google sample script shows how to read JSON string from a file and rebuild the Google response object </p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Use local OCR cached response when available</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RESULTS_FOLDER</span><span class="p">,</span> <span class="n">imgname</span><span class="o">+</span><span class="s2">&quot;.google.vision.json&quot;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cachefile</span><span class="p">:</span>
     <span class="n">json_string</span> <span class="o">=</span> <span class="n">cachefile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># Hydrate Google annotation object</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">json_format</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">json_string</span><span class="p">,</span> <span class="n">vision</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">AnnotateImageResponse</span><span class="p">())</span>
 </code></pre></div>
 
 
-<p>then call the processGoogleOCRResponse() as usual. </p>
+<p>Call the processGoogleOCRResponse() as usual. </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Create BBOX OCR Response from Google&#39;s response object</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

@@ -239,8 +239,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ocr-support" class="md-nav__link">
-    OCR Support
+  <a href="#ocr-engines-support" class="md-nav__link">
+    OCR Engines Support
   </a>
   
 </li>
@@ -504,8 +504,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ocr-support" class="md-nav__link">
-    OCR Support
+  <a href="#ocr-engines-support" class="md-nav__link">
+    OCR Engines Support
   </a>
   
 </li>
@@ -551,25 +551,27 @@
                 
                 
                 <h1 id="ocrlayout-library">Ocrlayout Library<a class="headerlink" href="#ocrlayout-library" title="Permanent link">&para;</a></h1>
-<p>Provides the ability to get more meaninful text out of common OCR outputs. It manipulates the Bounding Boxes of lines. </p>
+<p>Provides the ability to get more meaninful output from common OCR responses by manipulating Bounding Boxes.</p>
+<p>Current OCR engines responses are focus on text recall. Ocrlayout tries to go a step further by re-ordering the lines of text so it'd approach a human-reading behavior. </p>
 <h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
-<p>While OCR processing images containing lots of textual information, it becomes relevant to assemble the generated text into meaninful lines of text combining related paragraphs or sentences. </p>
-<p>Another way to see would be to cluster the lines of text based on their positions/coordinates in the original content. </p>
+<p>When processing images containing lots of textual information, it becomes relevant to assemble the generated text into meaninful blocks of text. 
+While OCR engines responses are fine for recall, they aren't necessary generating meaningfull output text for further Text processing. </p>
 <h2 id="more-meaningfull-output-for-what">More meaningfull output for what?<a class="headerlink" href="#more-meaningfull-output-for-what" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Text Analytics you may leverage any Text Analytics such as Key Phrases, Entities Extraction with more confidence of its outcome</li>
-<li>Accessibility : Any infographic becomes alive, overcoming the alt text feature.</li>
-<li>Modern browser Read Aloud feature : it becomes easier to build solutions to read aloud an image, increasing verbal narrative of visual information. </li>
-<li>Machine Translation : get more accurate MT output as you can retain more context. </li>
-<li>Sentences/Paragraph Classification : from scanned-base images i.e. contracts, having a more meaninful textual output allows you to classify it at a granular level in terms of risk, personal clause or conditions. </li>
+<li><strong>Text Analytics</strong> you may leverage any Text Analytics such as Key Phrases, Entities Extraction with more confidence of its outcome</li>
+<li><strong>Accessibility</strong> : Any infographic becomes alive, overcoming the alt text feature.</li>
+<li><strong>Read Aloud feature</strong> : it becomes easier to build solutions to read aloud an image, increasing verbal narrative of visual information. </li>
+<li><strong>Machine Translation</strong> : get more accurate MT output as you can retain more context. </li>
+<li><strong>Sentences/Paragraph Classification</strong>: from scanned-base images i.e. contracts, having a more meaninful textual output allows you to classify it at a granular level in terms of risk, personal clause or conditions. </li>
 </ul>
-<h2 id="ocr-support">OCR Support<a class="headerlink" href="#ocr-support" title="Permanent link">&para;</a></h2>
-<p>BBoxHelper supports Azure/Google respective Computer Vision API.</p>
+<h2 id="ocr-engines-support">OCR Engines Support<a class="headerlink" href="#ocr-engines-support" title="Permanent link">&para;</a></h2>
+<p>We supports Azure/Google respective Computer Vision API.</p>
 <blockquote>
 <p>Our goal here is not to conduct a comparison between Azure &amp; Google Computer Vision API but to provide a consistent way to output OCR text for further processing regardless of the underlying OCR Engine. </p>
 </blockquote>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#read-api">Azure Batch Read API response</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/   computer-vision/concept-recognizing-text#read-api">Azure Computer Vision Read API</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#ocr-api">Azure Computer Vision OCR API</a></li>
 <li><a href="https://cloud.google.com/vision/docs/ocr#vision_text_detection-python">Google Vision API Detect Text</a></li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
