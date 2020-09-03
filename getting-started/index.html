@@ -262,8 +262,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#microsoft-azure" class="md-nav__link">
-    Microsoft Azure
+  <a href="#azure" class="md-nav__link">
+    Azure
   </a>
   
 </li>
@@ -271,6 +271,13 @@
           <li class="md-nav__item">
   <a href="#google" class="md-nav__link">
     Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -289,15 +296,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-azure" class="md-nav__link">
-    For Azure
+  <a href="#azure_1" class="md-nav__link">
+    Azure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-google" class="md-nav__link">
-    For Google
+  <a href="#google_1" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws_1" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -685,8 +699,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#microsoft-azure" class="md-nav__link">
-    Microsoft Azure
+  <a href="#azure" class="md-nav__link">
+    Azure
   </a>
   
 </li>
@@ -694,6 +708,13 @@
           <li class="md-nav__item">
   <a href="#google" class="md-nav__link">
     Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -712,15 +733,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-azure" class="md-nav__link">
-    For Azure
+  <a href="#azure_1" class="md-nav__link">
+    Azure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-google" class="md-nav__link">
-    For Google
+  <a href="#google_1" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws_1" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -863,8 +891,8 @@
 
 
 <h2 id="prepare-your-ocr-engines-calls">Prepare your OCR engine(s) call(s)<a class="headerlink" href="#prepare-your-ocr-engines-calls" title="Permanent link">&para;</a></h2>
-<p>Depending on your preferred OCR service Microsoft Azure or Google</p>
-<h3 id="microsoft-azure">Microsoft Azure<a class="headerlink" href="#microsoft-azure" title="Permanent link">&para;</a></h3>
+<p>Depending on your preferred OCR service Azure, Google or AWS, follow the corresponding instructions.</p>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
 <p>Set the below 2 environment variables in your OS env. </p>
 <div class="codehilite"><pre><span></span><code>COMPUTERVISION_SUBSCRIPTION_KEY
 COMPUTERVISION_LOCATION
@@ -878,10 +906,15 @@ COMPUTERVISION_LOCATION
 
 
 <h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
-<p>Refer to Google documentation to authenticate the <a href="https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication">Google Client</a></p>
+<p>Google documentation to authenticate the <a href="https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication">Google Client</a></p>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<p>AWS documentation to get started with <a href="https://docs.aws.amazon.com/textract/latest/dg/getting-started.html">Amazon Textract</a></p>
 <h2 id="calling-the-bboxhelper-main-method">Calling the BBoxHelper main method<a class="headerlink" href="#calling-the-bboxhelper-main-method" title="Permanent link">&para;</a></h2>
-<p>if you are not familiar with Azure CV and/or Google Document Text detection first hands I would encourage you to jump the <a href="#bboxhelper-run-the-sample-script-in-github">Sample script</a> section.</p>
-<h4 id="for-azure">For Azure<a class="headerlink" href="#for-azure" title="Permanent link">&para;</a></h4>
+<p>if you are not familiar with Azure CV, Google &amp; AWS Text detection first hands I would encourage you to jump the <a href="#bboxhelper-run-the-sample-script-in-github">Sample script</a> section as it would help getting hands on experience. </p>
+<h4 id="azure_1">Azure<a class="headerlink" href="#azure_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Azure response is a JSON string object hence we can send it as-is to processing after decoding. </p>
+</blockquote>
 <div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">)</span>
@@ -889,33 +922,59 @@ COMPUTERVISION_LOCATION
 </code></pre></div>
 
 
-<h4 id="for-google">For Google<a class="headerlink" href="#for-google" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+<h4 id="google_1">Google<a class="headerlink" href="#google_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">google_client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+<span class="c1"># Convert the response object to JSON</span>
+<span class="n">json_string</span><span class="o">=</span><span class="n">json_format</span><span class="o">.</span><span class="n">MessageToJson</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 <span class="o">...</span>
-<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">full_text_annotation</span><span class="p">)</span>
+<span class="c1"># Create BBOX OCR Response from Google&#39;s JSON output</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 
 
 <blockquote>
-<p>Only passing the full_text_annotation object is supported at the moment.</p>
+<p>Passing the full_text_annotation object itself will not work anymore (ocrlayout&gt;=0.8), only a JSON string or dict object are supported hence the JSON MessageToJson invocation.</p>
 </blockquote>
+<h4 id="aws_1">AWS<a class="headerlink" href="#aws_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>AWS response is Dictionary-based object hence we can send it as-is to processing. </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Amazon Textract client</span>
+<span class="n">textract</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;textract&#39;</span><span class="p">)</span>
+<span class="c1"># Call Amazon Textract</span>
+<span class="n">ocrresponse</span> <span class="o">=</span> <span class="n">textract</span><span class="o">.</span><span class="n">detect_document_text</span><span class="p">(</span><span class="n">Document</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bytes&#39;</span><span class="p">:</span> <span class="n">bytes_test</span> <span class="p">})</span>
+<span class="c1"># Getting the width and height of the image</span>
+<span class="n">imagefn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">imagefn</span><span class="p">)</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+<span class="c1"># Create BBOX OCR Response from AWS string response</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAWSOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
+</code></pre></div>
+
+
 <h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
-<p>The BBoxHelper().processAzureOCRResponse() method will accept a string, dict (JSON) or BBOXOCRResponse instance. </p>
-<p>Passing a dict object (really if you want to)</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
+<p>The BBoxHelper().processXXXOCRResponse() method will accept a JSON string, JSON/Dictionary object or existing BBOXOCRResponse object. </p>
+<p>All processXXXOCRResponse methods will check on the input object type to convert it to a BBOXOCRResponse object.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Load the input into a BBOXOCRResponse object for processing</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_xxx</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">input</span><span class="p">))</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_xxx</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">BBOXOCRResponse</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="nb">input</span>
 </code></pre></div>
 
 
-<p>Creating a non-optimized BBOXOCRResponse object</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">)</span>
+<p>Once the input is converted to an non-optimized BBOXOCRResponse object it goes into the processing phase. </p>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">)</span>
 </code></pre></div>
 
 
-<p><strong>Important</strong> Passing an existing BBOXOCRResponse object to BBoxHelper.processAzureOCRResponse() will modify it.</p>
+<p><strong>Important</strong> Passing an existing BBOXOCRResponse object to any BBoxHelper.processXXXOCRResponse() method will modify the object.</p>
 <p>If you need to keep the "original" BBOXOCRResponse make sure to do a copy.deepcopy() beforehands.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_azure</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">)</span>
-<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
 </code></pre></div>
 
 
