@@ -370,10 +370,10 @@
         
           <li class="md-nav__item">
   <a href="#azure-bboxing" class="md-nav__link">
-    Azure BBoxing...
+    Azure BBoxing
   </a>
   
-    <nav class="md-nav" aria-label="Azure BBoxing...">
+    <nav class="md-nav" aria-label="Azure BBoxing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -419,6 +419,46 @@
           <li class="md-nav__item">
   <a href="#google-bboxing-text-output" class="md-nav__link">
     Google BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-raw-text-output" class="md-nav__link">
+    AWS Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing" class="md-nav__link">
+    AWS BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing-text-output" class="md-nav__link">
+    AWS BBoxing text output
   </a>
   
 </li>
@@ -596,10 +636,10 @@
         
           <li class="md-nav__item">
   <a href="#azure-bboxing" class="md-nav__link">
-    Azure BBoxing...
+    Azure BBoxing
   </a>
   
-    <nav class="md-nav" aria-label="Azure BBoxing...">
+    <nav class="md-nav" aria-label="Azure BBoxing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -660,6 +700,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-raw-text-output" class="md-nav__link">
+    AWS Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing" class="md-nav__link">
+    AWS BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing-text-output" class="md-nav__link">
+    AWS BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     Conclusion
   </a>
@@ -688,7 +768,7 @@
                 
                 <h1 id="simple-infographic">Simple infographic<a class="headerlink" href="#simple-infographic" title="Permanent link">&para;</a></h1>
 <p><img alt="Screenshot" src="../img/image253.png" /></p>
-<p>The above image is a simple infographic, containing blocks of Text and countries references well separated. You will see that some OCR engines will clearly expose their line processing while other would do a better raw output job. </p>
+<p>The above image is a simple infographic, containing blocks of Text and countries references well separated. </p>
 <h2 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h2>
 <p>The below image represents the raw Azure OCR output where we drew each line of text bounding boxes. </p>
 <p><img alt="Screenshot" src="../img/image253.azure.png" /></p>
@@ -721,7 +801,7 @@ they were once joined.
 
 <p>We can clearly see that the lines of text are processed in a certain order in Azure Computer Vision adding the noise of the continents in between "sentences".
 Sorting on the Y axis ascending will probably give the same result as the raw output. So our goal is to rebuild the logical stream of text. </p>
-<h3 id="azure-bboxing">Azure BBoxing...<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
+<h3 id="azure-bboxing">Azure BBoxing<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
 <p>Boxes are drawn on the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
 <img alt="Screenshot" src="../img/image253.azure.bbox.png" /></p>
 <h4 id="azure-bboxing-text-output">Azure BBoxing text output<a class="headerlink" href="#azure-bboxing-text-output" title="Permanent link">&para;</a></h4>
@@ -740,7 +820,7 @@ Fossils of the fern Glossopteris found in all of the southern continents, show t
 <p>Here we do have a more concise output, clearly isolating the countries references and explanations of this infographic. We see the influence of an X axis sorting. </p>
 <p>Let's check on the same example with Google OCR engine... </p>
 <h2 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h2>
-<p>The below image represents the raw Google OCR output where we drew each line of text bounding boxes. Yellow colored are the words, red is for paragraphs and blue are for the blocks. See <a href="/google">Google Ocr</a> for more details.
+<p>The below image represents the raw Google OCR output where we drew each line of text bounding boxes. Yellow colored are the words, red is for paragraphs and blue are for the blocks. See <a href="/engines/google">Google Ocr</a> for more details.
 <img alt="Screenshot" src="../img/image253.google.png" /></p>
 <h3 id="google-raw-text-output-block-level">Google Raw Text output (block level)<a class="headerlink" href="#google-raw-text-output-block-level" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>AFRICA
@@ -784,8 +864,53 @@ Fossils of the fern Glossopteris found in all of the southem continents, show th
 </code></pre></div>
 
 
+<h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw AWS Textextract output where we drew each line of text bounding boxes. Yellow colored are the words, red is for lines. See <a href="/engines/aws">AWS Ocr</a> for more details.
+<img alt="Screenshot" src="../img/image253.aws.textextract.png" /></p>
+<h3 id="aws-raw-text-output">AWS Raw Text output<a class="headerlink" href="#aws-raw-text-output" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>Fossil evidence
+AFRICA
+of the Triassic
+land reptile
+INDIA
+Lystrosaurus.
+SOUTH AMERICA
+AUSTRALIA
+ANTARCTICA
+Fossil remains of
+Cynognathus, a
+Fossils of the fern
+Triassic land reptile
+Glossopteris found
+approximately
+Fossil remains of the
+in all of the southern
+3 m long
+freshwater reptile
+continents, show that
+Mesosaurus
+they were once joined.
+</code></pre></div>
+
+
+<h3 id="aws-bboxing">AWS BBoxing<a class="headerlink" href="#aws-bboxing" title="Permanent link">&para;</a></h3>
+<p>Boxes are drawn on the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
+<img alt="Screenshot" src="../img/image253.aws.textextract.bbox.png" /></p>
+<h4 id="aws-bboxing-text-output">AWS BBoxing text output<a class="headerlink" href="#aws-bboxing-text-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>SOUTH AMERICA
+Fossil remains of Cynognathus, a Triassic land reptile approximately 3 m long
+AFRICA
+Fossil remains of the freshwater reptile Mesosaurus
+INDIA
+ANTARCTICA
+Fossil evidence of the Triassic land reptile Lystrosaurus.
+AUSTRALIA
+Fossils of the fern Glossopteris found in all of the southern continents, show that they were once joined.
+</code></pre></div>
+
+
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>With this simple example we can see that both outputs are more aligned hence you can proceed with your next text transformation (i.e. Translatione etc.)</p>
+<p>With this simple example we can see all outputs are more aligned hence you can proceed with your next Textual transformation (i.e. Translation etc.)</p>
                 
               
               

@@ -386,18 +386,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#azure-raw-text-ouput" class="md-nav__link">
-    Azure Raw Text ouput
+  <a href="#azure-raw-text-output" class="md-nav__link">
+    Azure Raw Text output
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#azure-bboxing" class="md-nav__link">
-    Azure BBoxing...
+    Azure BBoxing
   </a>
   
-    <nav class="md-nav" aria-label="Azure BBoxing...">
+    <nav class="md-nav" aria-label="Azure BBoxing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -443,6 +443,46 @@
           <li class="md-nav__item">
   <a href="#google-bboxing-output" class="md-nav__link">
     Google BBoxing output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-raw-text-output" class="md-nav__link">
+    AWS Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing" class="md-nav__link">
+    AWS BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing-text-output" class="md-nav__link">
+    AWS BBoxing text output
   </a>
   
 </li>
@@ -595,18 +635,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#azure-raw-text-ouput" class="md-nav__link">
-    Azure Raw Text ouput
+  <a href="#azure-raw-text-output" class="md-nav__link">
+    Azure Raw Text output
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#azure-bboxing" class="md-nav__link">
-    Azure BBoxing...
+    Azure BBoxing
   </a>
   
-    <nav class="md-nav" aria-label="Azure BBoxing...">
+    <nav class="md-nav" aria-label="Azure BBoxing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -667,6 +707,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-raw-text-output" class="md-nav__link">
+    AWS Raw Text output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing" class="md-nav__link">
+    AWS BBoxing
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-bboxing-text-output" class="md-nav__link">
+    AWS BBoxing text output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#accessibility" class="md-nav__link">
     Accessibility
   </a>
@@ -708,7 +788,7 @@
 <h2 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h2>
 <p>The below image represents the raw Azure OCR output where we drew each line of text bounding boxes. 
 <img alt="Screenshot" src="../img/scan1.azure.png" /></p>
-<h3 id="azure-raw-text-ouput">Azure Raw Text ouput<a class="headerlink" href="#azure-raw-text-ouput" title="Permanent link">&para;</a></h3>
+<h3 id="azure-raw-text-output">Azure Raw Text output<a class="headerlink" href="#azure-raw-text-output" title="Permanent link">&para;</a></h3>
 <p>The below output is not sorted in any just taken as-is from Azure Computer Vision response. </p>
 <div class="codehilite"><pre><span></span><code>DNV GL ENERGY TRANSITION OUTLOOK - OIL AND GAS
 1. EXECUTIVE SUMMARY
@@ -756,7 +836,7 @@ The stage is set for gas to become the world&#39;s
 
 
 <p>So we need to have the 2-columns text clearly isolated from each other but sequential. You would read column One first then continue to read on column 2. </p>
-<h3 id="azure-bboxing">Azure BBoxing...<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
+<h3 id="azure-bboxing">Azure BBoxing<a class="headerlink" href="#azure-bboxing" title="Permanent link">&para;</a></h3>
 <p>Boxes are drawn on top of the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
 <img alt="Screenshot" src="../img/scan1.azure.bbox.png" /></p>
 <h4 id="azure-bboxing-text-output">Azure BBoxing text output<a class="headerlink" href="#azure-bboxing-text-output" title="Permanent link">&para;</a></h4>
@@ -815,6 +895,62 @@ The energy transition will be characterized by many sub-transitions in the next 
 Oil and gas will play a very important role in the  energy mix throughoutour forecasting period.  Although we expect renewable energy sources to  take an increasing share of this mix, we forecastoil  and gas to account for 44% of the world&#39;s primary  energy supply in 2050. down from 53% today.  Investment will be needed to add new oil and gas  production capacity, and to operate existing assets  safely and sustainably over this period, to deliver  output levels that can meet predicted demand. 
 The stage is set for gas to become the world&#39;s primary energy source towards 2050, and the last of the fossil fuels to experience peak demand, which will occur in 2035 according to our model. Gas can play a central role in supporting energy security alongside variable renewables during the transition. There are opportunities to improve its carbon footprint by curtailing methane emissions from its value chain and through improving the economics of large-scale carbon capture and storage (CCS) for gas-fuelled power generation. We expect demand for oil to be at its maximum in 2022 and the high point for coal has already passed.
 6
+The oil and gas industry will play a very important role in the energy mix throughout our forecasting period
+</code></pre></div>
+
+
+<h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
+<p>The below image represents the raw AWS Textextract output where we drew each line of text bounding boxes. Yellow colored are the words, red is for lines. See <a href="/engines/aws">AWS Ocr</a> for more details.
+<img alt="Screenshot" src="../img/scan1.aws.textextract.png" /></p>
+<h3 id="aws-raw-text-output">AWS Raw Text output<a class="headerlink" href="#aws-raw-text-output" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>DNV GL ENERGY TRANSITION OUTLOOK - OIL AND GAS
+1. EXECUTIVE SUMMARY
+The energy transition will be characterized by many sub-transitions
+in the next three decades. Based on the DNV GL model of the
+world energy system we forecast that global final energy demand
+will flatten at 430 exajoules (EJ) from 2030 onwards (7% higher
+than 2015), reflecting accelerating improvement in global energy
+efficiency, driven largely by the electrification of the world&#39;s energy
+system and an increased share of renewables.
+Oil and gas will play a very important role in the
+The stage is set for gas to become the world&#39;s
+energy mix throughout our forecasting period.
+primary energy source towards 2050, and the last of
+Although we expect renewable energy sources to
+the fossil fuels to experience peak demand, which
+take an increasing share of this mix, we forecast oil
+will occur in 2035 according to our model. Gas can
+and gas to account for 44% of the world&#39;s primary
+play a central role in supporting energy security
+energy supply in 2050, down from 53% today.
+alongside variable renewables during the transition.
+Investment will be needed to add new oil and gas
+There are opportunities to improve its carbon
+production capacity. and to operate existing assets
+footprint by curtailing methane emissions from its
+safely and sustainably over this period, to deliver
+value chain and through improving the economics
+output levels that can meet predicted demand.
+of large-scale carbon capture and storage (CCS) for
+gas-fuelled power generation. We expect demand
+for oil to be at its maximum in 2022 and the high
+point for coal has already passed.
+The oil and gas industry will
+play a very important role in
+the energy mix throughout
+our forecasting period
+</code></pre></div>
+
+
+<h3 id="aws-bboxing">AWS BBoxing<a class="headerlink" href="#aws-bboxing" title="Permanent link">&para;</a></h3>
+<p>Boxes are drawn on the original image. The numbers in red reprensent the blockid we use to sort the final boxes. See our <a href="/sorting">sorting</a> section for more details. 
+<img alt="Screenshot" src="../img/scan1.aws.textextract.bbox.png" /></p>
+<h4 id="aws-bboxing-text-output">AWS BBoxing text output<a class="headerlink" href="#aws-bboxing-text-output" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>DNV GL ENERGY TRANSITION OUTLOOK - OIL AND GAS
+1. EXECUTIVE SUMMARY
+The energy transition will be characterized by many sub-transitions in the next three decades. Based on the DNV GL model of the world energy system we forecast that global final energy demand will flatten at 430 exajoules (EJ) from 2030 onwards (7% higher than 2015), reflecting accelerating improvement in global energy efficiency, driven largely by the electrification of the world&#39;s energy system and an increased share of renewables.
+Oil and gas will play a very important role in the energy mix throughout our forecasting period. Although we expect renewable energy sources to take an increasing share of this mix, we forecast oil and gas to account for 44% of the world&#39;s primary energy supply in 2050, down from 53% today. Investment will be needed to add new oil and gas production capacity. and to operate existing assets safely and sustainably over this period, to deliver output levels that can meet predicted demand.
+The stage is set for gas to become the world&#39;s primary energy source towards 2050, and the last of the fossil fuels to experience peak demand, which will occur in 2035 according to our model. Gas can play a central role in supporting energy security alongside variable renewables during the transition. There are opportunities to improve its carbon footprint by curtailing methane emissions from its value chain and through improving the economics of large-scale carbon capture and storage (CCS) for gas-fuelled power generation. We expect demand for oil to be at its maximum in 2022 and the high point for coal has already passed.
 The oil and gas industry will play a very important role in the energy mix throughout our forecasting period
 </code></pre></div>
 
