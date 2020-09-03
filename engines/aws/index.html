@@ -1,0 +1,954 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Ability to get more meaninful text out of common OCR outputs.">
+      
+      
+      
+        <meta name="author" content="Nicolas Uthurriague">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+    
+    
+      
+        <title>AWS OCR - OCR Layout Helper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aws-textexract-detecting-text-ocr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="OCR Layout Helper" class="md-header-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OCR Layout Helper
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              AWS OCR
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OCR Layout Helper" class="md-nav__button md-logo" aria-label="OCR Layout Helper">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OCR Layout Helper
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/puthurr/ocrlayout/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      OCR Engines
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="OCR Engines" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        OCR Engines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../azure/" title="Azure OCR" class="md-nav__link">
+      Azure OCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../google/" title="Google OCR" class="md-nav__link">
+      Google OCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AWS OCR
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="AWS OCR" class="md-nav__link md-nav__link--active">
+      AWS OCR
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-textextract-documentation" class="md-nav__link">
+    AWS Textextract Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-python-example" class="md-nav__link">
+    AWS Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-bboxhelper-integration" class="md-nav__link">
+    AWS BBoxHelper Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxHelper Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+    <nav class="md-nav" aria-label="Behind the scene...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snippet-of-the-bboxhelperpy-to-process-an-aws-ocr-response" class="md-nav__link">
+    Snippet of the bboxhelper.py to process an AWS OCR response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-response-from-a-file-and-send-it-to-bbox-processing" class="md-nav__link">
+    Reading the response from a file and send it to BBOX processing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sorting/" title="Sorting Strategy" class="md-nav__link">
+      Sorting Strategy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Examples
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/infography1/" title="Simple Infographic" class="md-nav__link">
+      Simple Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/infography2/" title="Complex Infographic" class="md-nav__link">
+      Complex Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/scan1/" title="Simple page Layout" class="md-nav__link">
+      Simple page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/scan6/" title="Common page Layout" class="md-nav__link">
+      Common page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/scan2/" title="Complex page Layout" class="md-nav__link">
+      Complex page Layout
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../known-limitations/" title="Known Limitations" class="md-nav__link">
+      Known Limitations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      About
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="About" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-textextract-documentation" class="md-nav__link">
+    AWS Textextract Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-python-example" class="md-nav__link">
+    AWS Python Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-bboxhelper-integration" class="md-nav__link">
+    AWS BBoxHelper Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS BBoxHelper Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behind-the-scene" class="md-nav__link">
+    Behind the scene...
+  </a>
+  
+    <nav class="md-nav" aria-label="Behind the scene...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snippet-of-the-bboxhelperpy-to-process-an-aws-ocr-response" class="md-nav__link">
+    Snippet of the bboxhelper.py to process an AWS OCR response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-response-from-a-file-and-send-it-to-bbox-processing" class="md-nav__link">
+    Reading the response from a file and send it to BBOX processing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/puthurr/ocrlayout/blob/master/docs/engines/aws.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="aws-textexract-detecting-text-ocr">AWS Textexract - Detecting Text (OCR)<a class="headerlink" href="#aws-textexract-detecting-text-ocr" title="Permanent link">&para;</a></h1>
+<p>BBOXHelper supports AWS Textract detect_document_text for single-page documents. </p>
+<blockquote>
+<p>Amazon Textract operations process document images that are stored on a local file system, or document images stored in an Amazon S3 bucket. You specify where the input document is located by using the Document input parameter. The document image can be in either PNG or JPEG format.</p>
+</blockquote>
+<h2 id="aws-textextract-documentation">AWS Textextract Documentation<a class="headerlink" href="#aws-textextract-documentation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">AWS Textextract - Detecting Text</a></li>
+<li><a href="https://docs.aws.amazon.com/textract/latest/dg/detecting-document-text.html">AWS Textextract - Detecting Text Example</a></li>
+<li><a href="https://docs.aws.amazon.com/textract/latest/dg/API_Document.html">Document entity</a></li>
+</ol>
+<h2 id="aws-python-example">AWS Python Example<a class="headerlink" href="#aws-python-example" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1">#Detects text in a document stored in an S3 bucket. Display polygon box around text and angled text </span>
+<span class="kn">import</span> <span class="nn">boto3</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">psutil</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span>
+
+
+<span class="c1"># Displays information about a block returned by text detection and text analysis</span>
+<span class="k">def</span> <span class="nf">DisplayBlockInformation</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Id: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Id&#39;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="s1">&#39;Text&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    Detected: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    Type: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="s1">&#39;Confidence&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    Confidence: &#39;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Confidence&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;CELL&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    Cell information&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        Column:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;ColumnIndex&#39;</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        Row:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;RowIndex&#39;</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        Column Span:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;ColumnSpan&#39;</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        RowSpan:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;ColumnSpan&#39;</span><span class="p">]))</span>    
+
+    <span class="k">if</span> <span class="s1">&#39;Relationships&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    Relationships: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Relationships&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;    Geometry: &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;        Bounding Box: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;BoundingBox&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;        Polygon: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;KEY_VALUE_SET&quot;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;    Entity Type: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;EntityTypes&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="s1">&#39;Page&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Page: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Page&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">process_text_detection</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+
+
+    <span class="c1">#Get the document from S3</span>
+    <span class="n">s3_connection</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+
+    <span class="n">s3_object</span> <span class="o">=</span> <span class="n">s3_connection</span><span class="o">.</span><span class="n">Object</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span><span class="n">document</span><span class="p">)</span>
+    <span class="n">s3_response</span> <span class="o">=</span> <span class="n">s3_object</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+    <span class="n">stream</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">s3_response</span><span class="p">[</span><span class="s1">&#39;Body&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">image</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+
+    <span class="c1"># Detect text in the document</span>
+
+    <span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;textract&#39;</span><span class="p">)</span>
+    <span class="c1">#process using image bytes                      </span>
+    <span class="c1">#image_binary = stream.getvalue()</span>
+    <span class="c1">#response = client.detect_document_text(Document={&#39;Bytes&#39;: image_binary})</span>
+
+    <span class="c1">#process using S3 object</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">detect_document_text</span><span class="p">(</span>
+        <span class="n">Document</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;S3Object&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Bucket&#39;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">document</span><span class="p">}})</span>
+
+    <span class="c1">#Get the text blocks</span>
+    <span class="n">blocks</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;Blocks&#39;</span><span class="p">]</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">size</span>  
+    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>  
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Detected Document Text&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Create image showing bounding box/polygon the detected lines/text</span>
+    <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;PAGE&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Detected: &#39;</span> <span class="o">+</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">])</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confidence: &#39;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Confidence&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Id: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Id&#39;</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="s1">&#39;Relationships&#39;</span> <span class="ow">in</span> <span class="n">block</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Relationships: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Relationships&#39;</span><span class="p">]))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bounding Box: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;BoundingBox&#39;</span><span class="p">]))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polygon: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">]))</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="n">draw</span><span class="o">=</span><span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="c1"># Draw WORD - Green -  start of word, red - end of word</span>
+            <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;WORD&quot;</span><span class="p">:</span>
+                <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([(</span><span class="n">width</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+                <span class="n">height</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Y&#39;</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+                <span class="n">height</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;Y&#39;</span><span class="p">])],</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+                <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([(</span><span class="n">width</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+                <span class="n">height</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Y&#39;</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+                <span class="n">height</span> <span class="o">*</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;Y&#39;</span><span class="p">])],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>    
+
+
+            <span class="c1"># Draw box around entire LINE  </span>
+            <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;BlockType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;LINE&quot;</span><span class="p">:</span>
+                <span class="n">points</span><span class="o">=</span><span class="p">[]</span>
+
+                <span class="k">for</span> <span class="n">polygon</span> <span class="ow">in</span> <span class="n">block</span><span class="p">[</span><span class="s1">&#39;Geometry&#39;</span><span class="p">][</span><span class="s1">&#39;Polygon&#39;</span><span class="p">]:</span>
+                    <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">width</span> <span class="o">*</span> <span class="n">polygon</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">height</span> <span class="o">*</span> <span class="n">polygon</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]))</span>
+
+                <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">((</span><span class="n">points</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>    
+
+                <span class="c1"># Uncomment to draw bounding box</span>
+                <span class="c1">#box=block[&#39;Geometry&#39;][&#39;BoundingBox&#39;]                    </span>
+                <span class="c1">#left = width * box[&#39;Left&#39;]</span>
+                <span class="c1">#top = height * box[&#39;Top&#39;]           </span>
+                <span class="c1">#draw.rectangle([left,top, left + (width * box[&#39;Width&#39;]), top +(height * box[&#39;Height&#39;])],outline=&#39;black&#39;) </span>
+
+
+    <span class="c1"># Display the image</span>
+    <span class="n">image</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="c1"># display image for 10 seconds</span>
+
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">block_count</span><span class="o">=</span><span class="n">process_text_detection</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span><span class="n">document</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blocks detected: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">block_count</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h2 id="aws-bboxhelper-integration">AWS BBoxHelper Integration<a class="headerlink" href="#aws-bboxhelper-integration" title="Permanent link">&para;</a></h2>
+<p>Import the below ocrlayout classes</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># AWS </span>
+<span class="kn">import</span> <span class="nn">boto3</span> 
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">ocrlayout.bboxhelper</span> <span class="kn">import</span> <span class="n">BBOXOCRResponse</span><span class="p">,</span><span class="n">BBoxHelper</span>
+</code></pre></div>
+
+
+<p>Create the Textextract client </p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Amazon Textract client</span>
+<span class="n">textract</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;textract&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Capture the detect_document_text method passing the document as byte-array object. Refer to the <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Document.html">Document documentation</a> on how to build a Document object.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Call Amazon Textract</span>
+<span class="n">ocrresponse</span> <span class="o">=</span> <span class="n">textract</span><span class="o">.</span><span class="n">detect_document_text</span><span class="p">(</span><span class="n">Document</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bytes&#39;</span><span class="p">:</span> <span class="n">bytes_test</span> <span class="p">})</span>
+</code></pre></div>
+
+
+<p>Pass it to the BBoxHelper processing method <strong>processAWSOCRResponse()</strong>. </p>
+<blockquote>
+<p>AWS Textextract doesn't provide the Width and Height as part of their detect_document_text response object. We do need those for correctly processing the bboxes hence we provide those with the processing method as parameters.</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Retrieving the image width and height</span>
+<span class="n">imagefn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">imagefn</span><span class="p">)</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+<span class="c1"># Create BBOX OCR Response from AWS string response</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="o">.</span><span class="n">processAWSOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Print the resulting text</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h3 id="behind-the-scene">Behind the scene...<a class="headerlink" href="#behind-the-scene" title="Permanent link">&para;</a></h3>
+<p>The method <strong>processAWSOCRResponse()</strong> supports passing a string, JSON object or an existing BBOXOCRResponse.</p>
+<h4 id="snippet-of-the-bboxhelperpy-to-process-an-aws-ocr-response">Snippet of the <strong>bboxhelper.py</strong> to process an AWS OCR response<a class="headerlink" href="#snippet-of-the-bboxhelperpy-to-process-an-aws-ocr-response" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">BBOXPageLayout</span><span class="p">():</span>
+<span class="o">...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_aws</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">lines</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+        <span class="o">...</span>
+<span class="o">...</span>
+<span class="k">class</span> <span class="nc">BBOXOCRResponse</span><span class="p">():</span>
+<span class="o">...</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_aws_detect_document_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">pages</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+        <span class="n">pages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BBOXPageLayout</span><span class="o">.</span><span class="n">from_aws</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Blocks&quot;</span><span class="p">],</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s2">&quot;status&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;awssuccess&quot;</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span><span class="n">recognitionResults</span><span class="o">=</span><span class="n">pages</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="k">class</span> <span class="nc">BBoxHelper</span><span class="p">():</span>
+<span class="o">...</span>
+    <span class="k">def</span> <span class="nf">processAWSOCRResponse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">input</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">BBoxSort</span><span class="o">.</span><span class="n">contoursSort</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; processAWSOCRResponse method</span>
+<span class="sd">            Process an OCR Response input from AWS and returns a new BBox format OCR response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">bboxlogger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+        <span class="c1">#load the input json into a response object</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_aws_detect_document_text</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">input</span><span class="p">),</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_aws_detect_document_text</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">BBOXOCRResponse</span><span class="p">):</span>
+            <span class="n">response</span><span class="o">=</span><span class="nb">input</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">)</span>
+<span class="o">...</span>
+</code></pre></div>
+
+
+<h3 id="reading-the-response-from-a-file-and-send-it-to-bbox-processing">Reading the response from a file and send it to BBOX processing<a class="headerlink" href="#reading-the-response-from-a-file-and-send-it-to-bbox-processing" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use local OCR cached response when available</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">RESULTS_FOLDER</span><span class="p">,</span> <span class="n">imgname</span><span class="o">+</span><span class="s2">&quot;.aws.textextract.json&quot;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cachefile</span><span class="p">:</span>
+    <span class="n">ocrresponse</span> <span class="o">=</span> <span class="n">cachefile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Retrieving the image width and height</span>
+<span class="n">imagefn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">imgname</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">imagefn</span><span class="p">)</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+
+<span class="c1"># Create BBOX OCR Response from AWS string response</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="o">.</span><span class="n">processAWSOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Print the output text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../google/" title="Google OCR" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Google OCR
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../sorting/" title="Sorting Strategy" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Sorting Strategy
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

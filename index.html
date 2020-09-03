@@ -289,22 +289,64 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      OCR Engines
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="OCR Engines" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        OCR Engines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="azure/" title="Azure OCR" class="md-nav__link">
+    <a href="engines/azure/" title="Azure OCR" class="md-nav__link">
       Azure OCR
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
-    <a href="google/" title="Google OCR" class="md-nav__link">
+    <a href="engines/google/" title="Google OCR" class="md-nav__link">
       Google OCR
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="engines/aws/" title="AWS OCR" class="md-nav__link">
+      AWS OCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -327,16 +369,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Examples
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Examples" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -429,16 +471,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-7">
       About
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="About" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-7">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -565,14 +607,15 @@ While OCR engines responses are fine for recall, they aren't necessary generatin
 <li><strong>Sentences/Paragraph Classification</strong>: from scanned-base images i.e. contracts, having a more meaninful textual output allows you to classify it at a granular level in terms of risk, personal clause or conditions. </li>
 </ul>
 <h2 id="ocr-engines-support">OCR Engines Support<a class="headerlink" href="#ocr-engines-support" title="Permanent link">&para;</a></h2>
-<p>We supports Azure/Google respective Computer Vision API.</p>
+<p>We support Azure, Google &amp; AWS text extraction OCR API.</p>
 <blockquote>
-<p>Our goal here is not to conduct a comparison between Azure &amp; Google Computer Vision API but to provide a consistent way to output OCR text for further processing regardless of the underlying OCR Engine. </p>
+<p>Our goal here is not to conduct a comparison between all 3 majors providers but to provide a consistent way to output OCR text for further processing regardless of the underlying OCR Engine. </p>
 </blockquote>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/   computer-vision/concept-recognizing-text#read-api">Azure Computer Vision Read API</a></li>
-<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#ocr-api">Azure Computer Vision OCR API</a></li>
-<li><a href="https://cloud.google.com/vision/docs/ocr#vision_text_detection-python">Google Vision API Detect Text</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#read-api">Azure Computer Vision - Read API</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text#ocr-api">Azure Computer Vision - OCR API</a></li>
+<li><a href="https://cloud.google.com/vision/docs/ocr#vision_text_detection-python">Google Vision API - Detect Text</a></li>
+<li><a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">AWS Textextract - Detecting Text</a></li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Check out our <strong>Examples</strong> section to get a better feeling on how Bounding Box Helper could support better your OCR-related projects. </p>
