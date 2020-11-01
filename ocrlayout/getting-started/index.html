@@ -1,0 +1,1274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hosting softwares and thoughts about data, AI, ML, knowledge mining and search.">
+      
+      
+      
+        <meta name="author" content="Nicolas Uthurriague (MSFT)">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
+    
+    
+      
+        <title>Getting Started - About Technology</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19190aaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.24b84193.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#before-you-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="About Technology" class="md-header-nav__button md-logo" aria-label="About Technology">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            About Technology
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/puthurr/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="About Technology" class="md-nav__button md-logo" aria-label="About Technology">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    About Technology
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/puthurr/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      OCRLAYOUT (Python)
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="OCRLAYOUT (Python)" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        OCRLAYOUT (Python)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ocrlayout-package-install" class="md-nav__link">
+    Ocrlayout package install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-the-bboxhelper-and-bboxocrresponse-classes" class="md-nav__link">
+    Import the BBoxHelper and BBOXOCRResponse classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-your-ocr-engines-calls" class="md-nav__link">
+    Prepare your OCR engine(s) call(s)
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare your OCR engine(s) call(s)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-the-bboxhelper-main-method" class="md-nav__link">
+    Calling the BBoxHelper main method
+  </a>
+  
+    <nav class="md-nav" aria-label="Calling the BBoxHelper main method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure_1" class="md-nav__link">
+    Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google_1" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws_1" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-response-object" class="md-nav__link">
+    BBoxHelper - Response object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-run-the-sample-script-in-github" class="md-nav__link">
+    BBoxHelper - Run the sample script in github
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script in github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#under-the-project-python-directory-in-a-terminal" class="md-nav__link">
+    Under the project python directory in a terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-invocation" class="md-nav__link">
+    Sample script invocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample script invocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-on-a-single-image" class="md-nav__link">
+    Invoke on a single image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-for-all-images-from-the-default-images_folder" class="md-nav__link">
+    Invoke for all images from the default IMAGES_FOLDER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-for-all-images-which-name-contains-scan1" class="md-nav__link">
+    Invoke for all images which name contains "scan1"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-flow" class="md-nav__link">
+    Sample script flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-output" class="md-nav__link">
+    Sample script Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-default-input-and-output-directories-used-in-the-sample-script" class="md-nav__link">
+    Changing the default input and output directories used in the sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    DISCLAIMER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      OCR Engines
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="OCR Engines" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        OCR Engines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../engines/azure/" class="md-nav__link">
+      Azure OCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../engines/google/" class="md-nav__link">
+      Google OCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../engines/aws/" class="md-nav__link">
+      AWS OCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sorting/" class="md-nav__link">
+      Sorting Strategy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Examples
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        <span class="md-nav__icon md-icon"></span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/infography1/" class="md-nav__link">
+      Simple Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/infography2/" class="md-nav__link">
+      Complex Infographic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/scan1/" class="md-nav__link">
+      Simple page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/scan6/" class="md-nav__link">
+      Common page Layout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/scan2/" class="md-nav__link">
+      Complex page Layout
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../known-limitations/" class="md-nav__link">
+      Known Limitations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      About
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="About" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        <span class="md-nav__icon md-icon"></span>
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/license/" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/puthurr/ocrlayout-recipes" class="md-nav__link">
+      OCRLAYOUT Recipes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Custom Apache Tika (Java)
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Custom Apache Tika (Java)" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Custom Apache Tika (Java)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apache-tika/" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      BLOG
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="BLOG" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        BLOG
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blog/" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://www.linkedin.com/in/puthurr/" class="md-nav__link">
+      LinkedIn Profile
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ocrlayout-package-install" class="md-nav__link">
+    Ocrlayout package install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-the-bboxhelper-and-bboxocrresponse-classes" class="md-nav__link">
+    Import the BBoxHelper and BBOXOCRResponse classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-your-ocr-engines-calls" class="md-nav__link">
+    Prepare your OCR engine(s) call(s)
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare your OCR engine(s) call(s)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calling-the-bboxhelper-main-method" class="md-nav__link">
+    Calling the BBoxHelper main method
+  </a>
+  
+    <nav class="md-nav" aria-label="Calling the BBoxHelper main method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure_1" class="md-nav__link">
+    Azure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google_1" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws_1" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-response-object" class="md-nav__link">
+    BBoxHelper - Response object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bboxhelper-run-the-sample-script-in-github" class="md-nav__link">
+    BBoxHelper - Run the sample script in github
+  </a>
+  
+    <nav class="md-nav" aria-label="BBoxHelper - Run the sample script in github">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#under-the-project-python-directory-in-a-terminal" class="md-nav__link">
+    Under the project python directory in a terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-invocation" class="md-nav__link">
+    Sample script invocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample script invocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-on-a-single-image" class="md-nav__link">
+    Invoke on a single image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-for-all-images-from-the-default-images_folder" class="md-nav__link">
+    Invoke for all images from the default IMAGES_FOLDER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invoke-for-all-images-which-name-contains-scan1" class="md-nav__link">
+    Invoke for all images which name contains "scan1"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-flow" class="md-nav__link">
+    Sample script flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-script-output" class="md-nav__link">
+    Sample script Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-default-input-and-output-directories-used-in-the-sample-script" class="md-nav__link">
+    Changing the default input and output directories used in the sample script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disclaimer" class="md-nav__link">
+    DISCLAIMER
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/puthurr/blob/master/docs/ocrlayout/getting-started.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Getting Started</h1>
+                
+                <p>The ocrlayout library contains our main class named BBoxHelper.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p>ocrlayout package has been developed for Python 3.7+. Refer to the package documentation for more details. </p>
+<p><a href="https://pypi.org/project/ocrlayout/">Package Documentation</a></p>
+<h2 id="ocrlayout-package-install">Ocrlayout package install<a class="headerlink" href="#ocrlayout-package-install" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>pip install ocrlayout
+</code></pre></div>
+
+<h2 id="import-the-bboxhelper-and-bboxocrresponse-classes">Import the BBoxHelper and BBOXOCRResponse classes<a class="headerlink" href="#import-the-bboxhelper-and-bboxocrresponse-classes" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">ocrlayout.bboxhelper</span> <span class="kn">import</span> <span class="n">BBOXOCRResponse</span><span class="p">,</span><span class="n">BBoxHelper</span>
+</code></pre></div>
+
+<h2 id="prepare-your-ocr-engines-calls">Prepare your OCR engine(s) call(s)<a class="headerlink" href="#prepare-your-ocr-engines-calls" title="Permanent link">&para;</a></h2>
+<p>Depending on your preferred OCR service Azure, Google or AWS, follow the corresponding instructions.</p>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<p>Set the below 2 environment variables in your OS env. </p>
+<div class="codehilite"><pre><span></span><code>COMPUTERVISION_SUBSCRIPTION_KEY
+COMPUTERVISION_LOCATION
+</code></pre></div>
+
+<p>The ComputerVision location refers to the region you have registered your Azure Computer Vision service. You only need the region there. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">COMPUTERVISION_SUBSCRIPTION_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+<span class="n">COMPUTERVISION_LOCATION</span><span class="o">=</span><span class="s2">&quot;westeurope&quot;</span>
+</code></pre></div>
+
+<h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
+<p>Google documentation to authenticate the <a href="https://cloud.google.com/vision/docs/ocr#set-up-your-gcp-project-and-authentication">Google Client</a></p>
+<h3 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<p>AWS documentation to get started with <a href="https://docs.aws.amazon.com/textract/latest/dg/getting-started.html">Amazon Textract</a></p>
+<h2 id="calling-the-bboxhelper-main-method">Calling the BBoxHelper main method<a class="headerlink" href="#calling-the-bboxhelper-main-method" title="Permanent link">&para;</a></h2>
+<p>if you are not familiar with Azure CV, Google &amp; AWS Text detection first hands I would encourage you to jump the <a href="#bboxhelper-run-the-sample-script-in-github">Sample script</a> section as it would help getting hands on experience. </p>
+<h4 id="azure_1">Azure<a class="headerlink" href="#azure_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Azure response is a JSON string object hence we can send it as-is to processing after decoding. </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">ocrresponse</span><span class="o">=</span><span class="n">image_analysis</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="google_1">Google<a class="headerlink" href="#google_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">google_client</span><span class="o">.</span><span class="n">document_text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+<span class="c1"># Convert the response object to JSON</span>
+<span class="n">json_string</span><span class="o">=</span><span class="n">json_format</span><span class="o">.</span><span class="n">MessageToJson</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="c1"># Create BBOX OCR Response from Google&#39;s JSON output</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processGoogleOCRResponse</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<blockquote>
+<p>Passing the full_text_annotation object itself will not work anymore (ocrlayout&gt;=0.8), only a JSON string or dict object are supported hence the JSON MessageToJson invocation.</p>
+</blockquote>
+<h4 id="aws_1">AWS<a class="headerlink" href="#aws_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>AWS response is Dictionary-based object hence we can send it as-is to processing. </p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Amazon Textract client</span>
+<span class="n">textract</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;textract&#39;</span><span class="p">)</span>
+<span class="c1"># Call Amazon Textract</span>
+<span class="n">ocrresponse</span> <span class="o">=</span> <span class="n">textract</span><span class="o">.</span><span class="n">detect_document_text</span><span class="p">(</span><span class="n">Document</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bytes&#39;</span><span class="p">:</span> <span class="n">bytes_test</span> <span class="p">})</span>
+<span class="c1"># Getting the width and height of the image</span>
+<span class="n">imagefn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">IMAGES_FOLDER</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">imagefn</span><span class="p">)</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+<span class="c1"># Create BBOX OCR Response from AWS string response</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAWSOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
+<p>The BBoxHelper().processXXXOCRResponse() method will accept a JSON string, JSON/Dictionary object or existing BBOXOCRResponse object. </p>
+<p>All processXXXOCRResponse methods will check on the input object type to convert it to a BBOXOCRResponse object.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Load the input into a BBOXOCRResponse object for processing</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_xxx</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">input</span><span class="p">))</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="n">BBOXOCRResponse</span><span class="o">.</span><span class="n">from_xxx</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">BBOXOCRResponse</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">=</span><span class="nb">input</span>
+</code></pre></div>
+
+<p>Once the input is converted to an non-optimized BBOXOCRResponse object it goes into the processing phase. </p>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__processOCRResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="p">,</span><span class="n">boxSeparator</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Important</strong> Passing an existing BBOXOCRResponse object to any BBoxHelper.processXXXOCRResponse() method will modify the object.</p>
+<p>If you need to keep the "original" BBOXOCRResponse make sure to do a copy.deepcopy() beforehands.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">))</span>
+</code></pre></div>
+
+<p>This could be usefull for evaluating OCR Engine(s) quality response (see the sample script) and ocrlayout optimization (before/after).</p>
+<h2 id="bboxhelper-response-object">BBoxHelper - Response object<a class="headerlink" href="#bboxhelper-response-object" title="Permanent link">&para;</a></h2>
+<ul>
+<li>status : reflect the original status of your ocr request response. </li>
+<li>original_text : the original text provide by the default OCR engine when relevant. </li>
+<li><strong>text</strong> : representing the sorted text of all processed pages. </li>
+<li>pages : List of all pages. The OCR Engines we support allows you to send full PDF or TIFF multiple pages. </li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">bboxresponse</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="bboxhelper-run-the-sample-script-in-github">BBoxHelper - Run the sample script in github<a class="headerlink" href="#bboxhelper-run-the-sample-script-in-github" title="Permanent link">&para;</a></h2>
+<p>We provided a single sample script to showcase how BBoxHelper runs against Azure and Google OCR engines output. </p>
+<h3 id="under-the-project-python-directory-in-a-terminal">Under the project python directory in a terminal<a class="headerlink" href="#under-the-project-python-directory-in-a-terminal" title="Permanent link">&para;</a></h3>
+<p>Execute the sample script <strong><a href="https://github.com/puthurr/ocrlayout/blob/master/python/bboxtester.py">bboxtester.py</a></strong> for testing with Microsoft Azure CV or Google CV. </p>
+<h3 id="sample-script-invocation">Sample script invocation<a class="headerlink" href="#sample-script-invocation" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>python3 bboxtester.py -h
+</code></pre></div>
+
+<p>The help output</p>
+<div class="codehilite"><pre><span></span><code>Local Package imported
+usage: bboxtester.py [-h] [--image IMAGE] [--imagesdir IMAGESDIR]
+                     [--filter FILTER] [--outputdir OUTPUTDIR] [--callocr]
+                     [-v]
+
+Call OCR outputs for a given image or images dir
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --image IMAGE         Process a single image
+  --imagesdir IMAGESDIR
+                        Process all images contained in the given directory
+  --filter FILTER       Filter the images to process based on their filename
+  --outputdir OUTPUTDIR
+                        Define where all outputs will be stored
+  --callocr             flag to invoke online OCR Service
+  -v, --verbose         DEBUG logging level
+</code></pre></div>
+
+<h4 id="invoke-on-a-single-image">Invoke on a single image<a class="headerlink" href="#invoke-on-a-single-image" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>bboxtester.py --image &lt;FULL_IMAGE_PATH&gt;
+</code></pre></div>
+
+<p>Example</p>
+<div class="codehilite"><pre><span></span><code>bboxtester.py --image /Users/../../../../images/infography1.jpeg
+</code></pre></div>
+
+<h4 id="invoke-for-all-images-from-the-default-images_folder">Invoke for all images from the default IMAGES_FOLDER<a class="headerlink" href="#invoke-for-all-images-from-the-default-images_folder" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>python3 bboxtester.py
+</code></pre></div>
+
+<p>Use the --imagesdir flag to set a different directory </p>
+<div class="codehilite"><pre><span></span><code>python3 bboxtester.py --imagesdir &lt;NEW_IMAGE_DIR&gt;
+</code></pre></div>
+
+<h4 id="invoke-for-all-images-which-name-contains-scan1">Invoke for all images which name contains "scan1"<a class="headerlink" href="#invoke-for-all-images-which-name-contains-scan1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>python3 bboxtester.py --filter scan1
+</code></pre></div>
+
+<p>you get the idea...</p>
+<p><strong>Few notes</strong></p>
+<ul>
+<li>The sample script can run against the local ocrlayout directory if you haven't installed the ocrlayout package, simply run it from where the sample script is located. </li>
+<li>The callocr flag means we will invoke the online OCR service to process an image. Not setting that flag means we will rely on the previous call to the OCR Engine which we saved on disk the output (reducing your online service consumption cost for testing) </li>
+<li>if the flag <em>callocr</em> is on but there is no previously cache output on disk from a specific OCR engine, we will revert to invoke the online OCR service. </li>
+<li>If you only interested in testing a single OCR Engine, simply comment out the function prefix by either google_ or axure_ in bboxtester.py. The code detect automatically which function to run based on its signature.</li>
+</ul>
+<h3 id="sample-script-flow">Sample script flow<a class="headerlink" href="#sample-script-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>process one or all images located under the images script (one level of the python dir), </li>
+<li>call the corresponding OCR service, </li>
+<li>persist the raw ocr response on disk in the tests-results or the directory of your choice</li>
+<li>persist the original image with the bouding boxes of the raw OCR response</li>
+<li>call on the BBOx Helper processOCRResponse() method. </li>
+<li>persist the original image with the bouding boxes of the BBoxHelper OCR response .</li>
+</ol>
+<h3 id="sample-script-output">Sample script Output<a class="headerlink" href="#sample-script-output" title="Permanent link">&para;</a></h3>
+<p>Each Sample script will output </p>
+<ul>
+<li>Azure Annotated Image where we draw the lines its OCR </li>
+<li>Azure OCR JSON </li>
+<li>Azure OCR Text (textual information)</li>
+<li>Google Annotated Image where we draw the lines its OCR </li>
+<li>Google OCR Text (textual information)</li>
+</ul>
+<p>Those outputs allow you to evaluate the different OCR output visually.</p>
+<h3 id="changing-the-default-input-and-output-directories-used-in-the-sample-script">Changing the default input and output directories used in the sample script<a class="headerlink" href="#changing-the-default-input-and-output-directories-used-in-the-sample-script" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">IMAGES_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;../images&quot;</span><span class="p">)</span>
+
+<span class="n">RESULTS_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;../tests-results&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>NOTE</strong> The RESULTS_FOLDER is created upon running the sample script if not already existing. </p>
+<h3 id="disclaimer">DISCLAIMER<a class="headerlink" href="#disclaimer" title="Permanent link">&para;</a></h3>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../engines/azure/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Azure OCR
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -12,19 +12,19 @@
       
         <meta name="author" content="Nicolas Uthurriague (MSFT)">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
     
     
       
-        <title>About Technology</title>
+        <title>Sorting Strategy - About Technology</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.19190aaf.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19190aaf.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.24b84193.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.24b84193.min.css">
         
           
           
@@ -43,7 +43,7 @@
     
     
     
-      <link rel="stylesheet" href="extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
     
       
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#puthurr" class="md-skip">
+        <a href="#default-sorting-algorithm" class="md-skip">
           Skip to content
         </a>
       
@@ -79,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="." title="About Technology" class="md-header-nav__button md-logo" aria-label="About Technology">
+    <a href="../.." title="About Technology" class="md-header-nav__button md-logo" aria-label="About Technology">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -96,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Sorting Strategy
             
           </span>
         </div>
@@ -166,7 +166,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="About Technology" class="md-nav__button md-logo" aria-label="About Technology">
+    <a href="../.." title="About Technology" class="md-nav__button md-logo" aria-label="About Technology">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -194,20 +194,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -215,10 +206,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       OCRLAYOUT (Python)
@@ -238,7 +231,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       Index
     </a>
   </li>
@@ -250,7 +243,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/getting-started/" class="md-nav__link">
+    <a href="../getting-started/" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -283,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/engines/azure/" class="md-nav__link">
+    <a href="../engines/azure/" class="md-nav__link">
       Azure OCR
     </a>
   </li>
@@ -295,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/engines/google/" class="md-nav__link">
+    <a href="../engines/google/" class="md-nav__link">
       Google OCR
     </a>
   </li>
@@ -307,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/engines/aws/" class="md-nav__link">
+    <a href="../engines/aws/" class="md-nav__link">
       AWS OCR
     </a>
   </li>
@@ -322,11 +315,79 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="ocrlayout/sorting/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Sorting Strategy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Sorting Strategy
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-sorting-algorithm" class="md-nav__link">
+    Default sorting Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Default sorting Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-round-vertical-grouping" class="md-nav__link">
+    First round: Vertical grouping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-round-horizontal-grouping" class="md-nav__link">
+    Second round: Horizontal grouping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others-sorting-algorithms" class="md-nav__link">
+    Others sorting algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-your-own-sorting-algorithm" class="md-nav__link">
+    Implement your own sorting algorithm
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -357,7 +418,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/examples/infography1/" class="md-nav__link">
+    <a href="../examples/infography1/" class="md-nav__link">
       Simple Infographic
     </a>
   </li>
@@ -369,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/examples/infography2/" class="md-nav__link">
+    <a href="../examples/infography2/" class="md-nav__link">
       Complex Infographic
     </a>
   </li>
@@ -381,7 +442,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/examples/scan1/" class="md-nav__link">
+    <a href="../examples/scan1/" class="md-nav__link">
       Simple page Layout
     </a>
   </li>
@@ -393,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/examples/scan6/" class="md-nav__link">
+    <a href="../examples/scan6/" class="md-nav__link">
       Common page Layout
     </a>
   </li>
@@ -405,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/examples/scan2/" class="md-nav__link">
+    <a href="../examples/scan2/" class="md-nav__link">
       Complex page Layout
     </a>
   </li>
@@ -422,7 +483,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/known-limitations/" class="md-nav__link">
+    <a href="../known-limitations/" class="md-nav__link">
       Known Limitations
     </a>
   </li>
@@ -455,7 +516,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ocrlayout/about/license/" class="md-nav__link">
+    <a href="../about/license/" class="md-nav__link">
       License
     </a>
   </li>
@@ -510,7 +571,7 @@
 
 
   <li class="md-nav__item">
-    <a href="apache-tika/" class="md-nav__link">
+    <a href="../../apache-tika/" class="md-nav__link">
       Index
     </a>
   </li>
@@ -548,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="blog/" class="md-nav__link">
+    <a href="../../blog/" class="md-nav__link">
       Index
     </a>
   </li>
@@ -585,8 +646,55 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-sorting-algorithm" class="md-nav__link">
+    Default sorting Algorithm
+  </a>
+  
+    <nav class="md-nav" aria-label="Default sorting Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-round-vertical-grouping" class="md-nav__link">
+    First round: Vertical grouping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-round-horizontal-grouping" class="md-nav__link">
+    Second round: Horizontal grouping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others-sorting-algorithms" class="md-nav__link">
+    Others sorting algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-your-own-sorting-algorithm" class="md-nav__link">
+    Implement your own sorting algorithm
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -598,40 +706,58 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/puthurr/blob/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/puthurr/blob/master/docs/ocrlayout/sorting.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="puthurr">PUTHURR<a class="headerlink" href="#puthurr" title="Permanent link">&para;</a></h1>
-<h1 id="ocrlayout-python">OCRLAYOUT (Python)<a class="headerlink" href="#ocrlayout-python" title="Permanent link">&para;</a></h1>
-<p>Provides the ability to get more meaninful output from common OCR responses by manipulating Bounding Boxes.</p>
-<p>Current OCR engines responses are focus on text recall. Ocrlayout tries to go a step further by re-ordering the lines of text so it'd approach a human-reading behavior. </p>
-<h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
-<p>When processing images containing lots of textual information, it becomes relevant to assemble the generated text into meaninful blocks of text. 
-While OCR engines responses are fine for recall, they aren't necessary generating meaningfull output text for further Text processing. </p>
-<h2 id="more-meaningfull-output-for-what">More meaningfull output for what?<a class="headerlink" href="#more-meaningfull-output-for-what" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Text Analytics</strong> you may leverage any Text Analytics such as Key Phrases, Entities Extraction with more confidence of its outcome</li>
-<li><strong>Accessibility</strong> : Any infographic becomes alive, overcoming the alt text feature.</li>
-<li><strong>Read Aloud feature</strong> : it becomes easier to build solutions to read aloud an image, increasing verbal narrative of visual information. </li>
-<li><strong>Machine Translation</strong> : get more accurate MT output as you can retain more context. </li>
-<li><strong>Sentences/Paragraph Classification</strong>: from scanned-base images i.e. contracts, having a more meaninful textual output allows you to classify it at a granular level in terms of risk, personal clause or conditions. </li>
-</ul>
-<p><a href="/ocrlayout">Documentation</a>
-<a href="https://github.com/puthurr/ocrlayout">Repository</a></p>
-<h1 id="ocrlayout-recipes-python-net-core">OCRLAYOUT Recipes (Python, .NET Core)<a class="headerlink" href="#ocrlayout-recipes-python-net-core" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>This repository provides clear examples of the value of <strong>ocrlayout</strong> with real-world examples. </p>
-</blockquote>
-<p><a href="https://github.com/puthurr/ocrlayout-recipes">Repository</a></p>
-<h1 id="custom-apache-tika-java">CUSTOM APACHE TIKA (Java)<a class="headerlink" href="#custom-apache-tika-java" title="Permanent link">&para;</a></h1>
-<p>For a Knowledge mining project, our team were looking to have a consistent representation of embedded images in Apache Tika XHTML output. </p>
-<p>To give you an example, the embedded images links for PowerPoint were missing but the images links for PDF were there.</p>
-<p>This version is trying to harmonize the way embedded images are showing up in the XHTML in a nutshell. Once stabilized our plan is to propose our changes to the Apache Tika community.</p>
-<p><a href="/apache-tika">More details here</a></p>
-<h3 id="global-disclaimer">GLOBAL DISCLAIMER<a class="headerlink" href="#global-disclaimer" title="Permanent link">&para;</a></h3>
-<p>ALL DESCRIBED SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                  <h1>Sorting Strategy</h1>
+                
+                <p>This is one of the core feature of BBOXHelper, its ability to order the blocks of text in a logial reading manner. </p>
+<p>If you look at our <a href="/examples/scan1/">Simple page layout</a>, the middle block of text is a 2 column layout: you will read the first column then continue to the next column naturally without event thinking about it. </p>
+<p>Well this is this natural reading order of things in a page, our default sorting algorythm tries to emulate. 
+The implementation is done in the method named BBoxSort.contoursSort(...)</p>
+<h2 id="default-sorting-algorithm">Default sorting Algorithm<a class="headerlink" href="#default-sorting-algorithm" title="Permanent link">&para;</a></h2>
+<p>It is the best algo I could came up with so far. Let me go through it a bit. </p>
+<p>Ultimate Goal : Generate a <strong>rank</strong> for each block of text which we can sort upon, matching a certain natural reading order.</p>
+<p>To generate a rank scoe, we need first to understand where the blocks stands. </p>
+<p>Inspired by the following <a href="https://stackoverflow.com/questions/58903071/i-want-to-sort-the-words-extracted-from-image-in-order-of-their-occurence-using">stackoverflow answer</a> contributed by <a href="https://stackoverflow.com/users/10699171/j-d">J-D</a>, the default sorting algo implements the following tasks</p>
+<h3 id="first-round-vertical-grouping">First round: Vertical grouping<a class="headerlink" href="#first-round-vertical-grouping" title="Permanent link">&para;</a></h3>
+<p>Find regions on the Y axis separated by empty regions:
+- Empty region is a region on the Y axis where there is no bounding boxes
+- By opposite we can then find regions on the Y Axis containing existing boxes
+<em>See how blocks of text are grouped vertically like in the stackoverflow answer.</em>
+For each non-empty region,
+- ascending sort on their opposite axis 
+- add a sequence number to each belonging block + regularization value</p>
+<p>I then repeat the same operation horizontally so I can handle the 2-columns of text locating on the same vertical group. </p>
+<h3 id="second-round-horizontal-grouping">Second round: Horizontal grouping<a class="headerlink" href="#second-round-horizontal-grouping" title="Permanent link">&para;</a></h3>
+<p>Find regions on the X axis separated by empty regions:
+- Empty region is a region on the X axis where there is no bounding boxes
+- By opposite we can then find regions on the X Axis containing existing boxes
+For each non-empty region,
+- ascending sort on their opposite axis 
+- add a sequence number to each belonging block + regularization value</p>
+<p>At the end, each block has a rank which we can sort ascendantly. </p>
+<p>This isn't perfect by all means, I'll be happy to receive feedback on this or welcome contributors to enhance this algorithm. </p>
+<h2 id="others-sorting-algorithms">Others sorting algorithms<a class="headerlink" href="#others-sorting-algorithms" title="Permanent link">&para;</a></h2>
+<p>I'm providing few other "simplier" examples of sorting algorythm for convenience. Check the <strong>BBoxSort</strong> class in <strong>bboxutils.py</strong>.</p>
+<h2 id="implement-your-own-sorting-algorithm">Implement your own sorting algorithm<a class="headerlink" href="#implement-your-own-sorting-algorithm" title="Permanent link">&para;</a></h2>
+<p>You can also implement your own algorithm defined as class method.</p>
+<p>Define a class then function signature should be as follows </p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">myClass</span><span class="p">():</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">mySort</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">pageId</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">blocks</span><span class="p">):</span>
+        <span class="c1">#...</span>
+        <span class="nb">sorted</span><span class="o">=</span><span class="p">[]</span>
+        <span class="c1"># Do your thing here with the incoming blocks</span>
+        <span class="c1">#...</span>
+        <span class="k">return</span> <span class="nb">sorted</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># Call the processing of your choice with the sortingAlgo parameter pointing to your own class</span>
+<span class="n">bboxresponse</span><span class="o">=</span><span class="n">BBoxHelper</span><span class="p">()</span><span class="o">.</span><span class="n">processAzureOCRResponse</span><span class="p">(</span><span class="n">ocrresponse</span><span class="p">,</span><span class="n">sortingAlgo</span><span class="o">=</span><span class="n">myClass</span><span class="o">.</span><span class="n">mySort</span><span class="p">)</span>
+</code></pre></div>
                 
               
               
@@ -650,14 +776,28 @@ While OCR engines responses are fine for recall, they aren't necessary generatin
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../engines/aws/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                AWS OCR
+              </div>
+            </div>
+          </a>
         
-          <a href="ocrlayout/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../examples/infography1/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Index
+                Simple Infographic
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -684,15 +824,15 @@ While OCR engines responses are fine for recall, they aren't necessary generatin
       
     </div>
     
-      <script src="assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
